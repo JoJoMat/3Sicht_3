@@ -11,6 +11,7 @@ public class GoToLevelManager : MonoBehaviour {
 
 	private float alpha;
 	public float alphaPlus = 0;
+	float fadeDelay = 2; //Fadedelay in Sekunden
 	// Update is called once per frame
 
 	void Update () {
@@ -36,7 +37,7 @@ public class GoToLevelManager : MonoBehaviour {
 	{
 		GetComponent<LoadLevel> ().level += 1;
 		GetComponent<Messung> ().Write ("BUTTONCLICK", "weiter");
-		alphaPlus =  0.5f;
+		alphaPlus =  1f /fadeDelay;
 		taskSetEnd ();
 	}
 
@@ -55,7 +56,7 @@ public class GoToLevelManager : MonoBehaviour {
 			GetComponent<LoadLevel> ().level += 1;
 			GetComponent<Messung> ().Write ("BUTTONCLICK", "weiter");
 		}
-		alphaPlus =  0.5f;
+		alphaPlus =  1f /fadeDelay;
 	}
 
 	public void SimpleAnswer(bool isYes){
@@ -88,7 +89,7 @@ public class GoToLevelManager : MonoBehaviour {
 			}
 			GetComponent<LoadLevel> ().level += 1;
 		}
-		alphaPlus =  0.5f;
+		alphaPlus =  1f /fadeDelay;
 		taskSetEnd ();
 	}
 
@@ -123,7 +124,7 @@ public class GoToLevelManager : MonoBehaviour {
 			}
 			GetComponent<LoadLevel> ().level += 1;
 		}
-		alphaPlus =  0.5f;
+		alphaPlus =  1f /fadeDelay;
 		taskSetEnd ();
 	}
 
@@ -131,7 +132,7 @@ public class GoToLevelManager : MonoBehaviour {
 	public void GoToLevel(int level)
 	{
 		GetComponent<LoadLevel> ().level = level;
-		alphaPlus =  0.5f;
+		alphaPlus =  1f /fadeDelay;
 	}
 
 	void taskSetEnd(){
