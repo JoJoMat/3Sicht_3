@@ -1,42 +1,42 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="GoToLevelManager">
-			<method name="NextLevel"/>
-			<method name="NextLevel"/>
-			<method name="NextLevel"/>
+			<method name="ifYesGoBackLevel"/>
 			<method name="SimpleAnswer"/>
-			<method name="NextLevel"/>
 			<method name="NextLevel"/>
 			<method name="ToggleAnswer"/>
+			<method name="NextLevel"/>
+			<method name="SimpleAnswer"/>
 			<method name="SimpleAnswer"/>
 			<method name="NextLevel"/>
 			<method name="SimpleAnswer"/>
-			<method name="ifYesGoBackLevel"/>
 			<method name="NextLevel"/>
-			<method name="SimpleAnswer"/>
-		</type>
-		<type fullname="Alert">
-			<method name="disableAlert"/>
+			<method name="NextLevel"/>
+			<method name="NextLevel"/>
+			<method name="NextLevel"/>
 		</type>
 		<type fullname="PanelManager">
 			<method name="OpenPanel"/>
+			<method name="CloseCurrent"/>
 			<method name="OpenPanel"/>
 			<method name="OpenPanel"/>
 			<method name="CloseCurrent"/>
 			<method name="CloseCurrent"/>
-			<method name="OpenPanel"/>
 			<method name="CloseCurrent"/>
 			<method name="OpenPanel"/>
-			<method name="CloseCurrent"/>
 			<method name="OpenPanel"/>
+			<method name="OpenPanel"/>
+		</type>
+		<type fullname="ApplicationManager">
+			<method name="Quit"/>
+		</type>
+		<type fullname="Alert">
+			<method name="disableAlert"/>
 		</type>
 		<type fullname="LoginChecker">
 			<method name="checkTan"/>
 			<method name="checkTan"/>
 			<method name="checkBenutzerPW"/>
-		</type>
-		<type fullname="ApplicationManager">
-			<method name="Quit"/>
 		</type>
 		<type fullname="LoadLevel">
 			<method name="uploadMeasurementDatabase"/>

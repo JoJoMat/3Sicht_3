@@ -19,39 +19,39 @@
 #include "object-internals.h"
 
 // UnityEngine.Video.VideoPlayer
-struct VideoPlayer_t2465340239;
+struct VideoPlayer_t3416264273;
 // UnityEngine.Video.VideoPlayer/EventHandler
-struct EventHandler_t444358625;
+struct EventHandler_t2287043380;
 // UnityEngine.Video.VideoPlayer/FrameReadyEventHandler
-struct FrameReadyEventHandler_t4268864336;
+struct FrameReadyEventHandler_t4089457767;
 // System.String
 struct String_t;
 // UnityEngine.Video.VideoPlayer/ErrorEventHandler
-struct ErrorEventHandler_t3761464949;
+struct ErrorEventHandler_t3265960182;
 // UnityEngine.Video.VideoPlayer/TimeEventHandler
-struct TimeEventHandler_t168690720;
+struct TimeEventHandler_t437352763;
 // System.IAsyncResult
-struct IAsyncResult_t4057726149;
+struct IAsyncResult_t330859210;
 // System.AsyncCallback
-struct AsyncCallback_t3186847474;
+struct AsyncCallback_t3068851518;
 // System.Char[]
-struct CharU5BU5D_t498600359;
+struct CharU5BU5D_t669908648;
 // System.Void
-struct Void_t886624537;
+struct Void_t3223934220;
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
 // System.DelegateData
-struct DelegateData_t3209800765;
+struct DelegateData_t1832777287;
 
-extern RuntimeClass* Int64_t1452987365_il2cpp_TypeInfo_var;
-extern const uint32_t FrameReadyEventHandler_BeginInvoke_m864164185_MetadataUsageId;
-extern RuntimeClass* Double_t716971719_il2cpp_TypeInfo_var;
-extern const uint32_t TimeEventHandler_BeginInvoke_m1748198991_MetadataUsageId;
+extern RuntimeClass* Int64_t1599470356_il2cpp_TypeInfo_var;
+extern const uint32_t FrameReadyEventHandler_BeginInvoke_m1587242780_MetadataUsageId;
+extern RuntimeClass* Double_t934487946_il2cpp_TypeInfo_var;
+extern const uint32_t TimeEventHandler_BeginInvoke_m2536437513_MetadataUsageId;
 
 
 
-#ifndef U3CMODULEU3E_T1018759202_H
-#define U3CMODULEU3E_T1018759202_H
+#ifndef U3CMODULEU3E_T1741177390_H
+#define U3CMODULEU3E_T1741177390_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -59,7 +59,7 @@ extern const uint32_t TimeEventHandler_BeginInvoke_m1748198991_MetadataUsageId;
 #endif
 
 // <Module>
-struct  U3CModuleU3E_t1018759202 
+struct  U3CModuleU3E_t1741177390 
 {
 public:
 
@@ -69,7 +69,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CMODULEU3E_T1018759202_H
+#endif // U3CMODULEU3E_T1741177390_H
 #ifndef RUNTIMEOBJECT_H
 #define RUNTIMEOBJECT_H
 #ifdef __clang__
@@ -99,8 +99,8 @@ struct Il2CppArrayBounds;
 #pragma clang diagnostic pop
 #endif
 #endif // RUNTIMEARRAY_H
-#ifndef VALUETYPE_T2770211211_H
-#define VALUETYPE_T2770211211_H
+#ifndef VALUETYPE_T3300735186_H
+#define VALUETYPE_T3300735186_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -108,7 +108,7 @@ struct Il2CppArrayBounds;
 #endif
 
 // System.ValueType
-struct  ValueType_t2770211211  : public RuntimeObject
+struct  ValueType_t3300735186  : public RuntimeObject
 {
 public:
 
@@ -119,14 +119,14 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of System.ValueType
-struct ValueType_t2770211211_marshaled_pinvoke
+struct ValueType_t3300735186_marshaled_pinvoke
 {
 };
 // Native definition for COM marshalling of System.ValueType
-struct ValueType_t2770211211_marshaled_com
+struct ValueType_t3300735186_marshaled_com
 {
 };
-#endif // VALUETYPE_T2770211211_H
+#endif // VALUETYPE_T3300735186_H
 #ifndef STRING_T_H
 #define STRING_T_H
 #ifdef __clang__
@@ -168,7 +168,7 @@ public:
 	// System.String System.String::Empty
 	String_t* ___Empty_2;
 	// System.Char[] System.String::WhiteChars
-	CharU5BU5D_t498600359* ___WhiteChars_3;
+	CharU5BU5D_t669908648* ___WhiteChars_3;
 
 public:
 	inline static int32_t get_offset_of_Empty_2() { return static_cast<int32_t>(offsetof(String_t_StaticFields, ___Empty_2)); }
@@ -181,9 +181,9 @@ public:
 	}
 
 	inline static int32_t get_offset_of_WhiteChars_3() { return static_cast<int32_t>(offsetof(String_t_StaticFields, ___WhiteChars_3)); }
-	inline CharU5BU5D_t498600359* get_WhiteChars_3() const { return ___WhiteChars_3; }
-	inline CharU5BU5D_t498600359** get_address_of_WhiteChars_3() { return &___WhiteChars_3; }
-	inline void set_WhiteChars_3(CharU5BU5D_t498600359* value)
+	inline CharU5BU5D_t669908648* get_WhiteChars_3() const { return ___WhiteChars_3; }
+	inline CharU5BU5D_t669908648** get_address_of_WhiteChars_3() { return &___WhiteChars_3; }
+	inline void set_WhiteChars_3(CharU5BU5D_t669908648* value)
 	{
 		___WhiteChars_3 = value;
 		Il2CppCodeGenWriteBarrier((&___WhiteChars_3), value);
@@ -239,8 +239,8 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // INTPTR_T_H
-#ifndef DOUBLE_T716971719_H
-#define DOUBLE_T716971719_H
+#ifndef DOUBLE_T934487946_H
+#define DOUBLE_T934487946_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -248,14 +248,14 @@ public:
 #endif
 
 // System.Double
-struct  Double_t716971719 
+struct  Double_t934487946 
 {
 public:
 	// System.Double System.Double::m_value
 	double ___m_value_13;
 
 public:
-	inline static int32_t get_offset_of_m_value_13() { return static_cast<int32_t>(offsetof(Double_t716971719, ___m_value_13)); }
+	inline static int32_t get_offset_of_m_value_13() { return static_cast<int32_t>(offsetof(Double_t934487946, ___m_value_13)); }
 	inline double get_m_value_13() const { return ___m_value_13; }
 	inline double* get_address_of_m_value_13() { return &___m_value_13; }
 	inline void set_m_value_13(double value)
@@ -267,9 +267,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // DOUBLE_T716971719_H
-#ifndef INT64_T1452987365_H
-#define INT64_T1452987365_H
+#endif // DOUBLE_T934487946_H
+#ifndef INT64_T1599470356_H
+#define INT64_T1599470356_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -277,14 +277,14 @@ public:
 #endif
 
 // System.Int64
-struct  Int64_t1452987365 
+struct  Int64_t1599470356 
 {
 public:
 	// System.Int64 System.Int64::m_value
 	int64_t ___m_value_2;
 
 public:
-	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Int64_t1452987365, ___m_value_2)); }
+	inline static int32_t get_offset_of_m_value_2() { return static_cast<int32_t>(offsetof(Int64_t1599470356, ___m_value_2)); }
 	inline int64_t get_m_value_2() const { return ___m_value_2; }
 	inline int64_t* get_address_of_m_value_2() { return &___m_value_2; }
 	inline void set_m_value_2(int64_t value)
@@ -296,9 +296,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // INT64_T1452987365_H
-#ifndef VOID_T886624537_H
-#define VOID_T886624537_H
+#endif // INT64_T1599470356_H
+#ifndef VOID_T3223934220_H
+#define VOID_T3223934220_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -306,7 +306,7 @@ public:
 #endif
 
 // System.Void
-struct  Void_t886624537 
+struct  Void_t3223934220 
 {
 public:
 
@@ -316,9 +316,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // VOID_T886624537_H
-#ifndef DELEGATE_T1041590898_H
-#define DELEGATE_T1041590898_H
+#endif // VOID_T3223934220_H
+#ifndef DELEGATE_T204843831_H
+#define DELEGATE_T204843831_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -326,7 +326,7 @@ public:
 #endif
 
 // System.Delegate
-struct  Delegate_t1041590898  : public RuntimeObject
+struct  Delegate_t204843831  : public RuntimeObject
 {
 public:
 	// System.IntPtr System.Delegate::method_ptr
@@ -346,10 +346,10 @@ public:
 	// System.Reflection.MethodInfo System.Delegate::original_method_info
 	MethodInfo_t * ___original_method_info_7;
 	// System.DelegateData System.Delegate::data
-	DelegateData_t3209800765 * ___data_8;
+	DelegateData_t1832777287 * ___data_8;
 
 public:
-	inline static int32_t get_offset_of_method_ptr_0() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___method_ptr_0)); }
+	inline static int32_t get_offset_of_method_ptr_0() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___method_ptr_0)); }
 	inline Il2CppMethodPointer get_method_ptr_0() const { return ___method_ptr_0; }
 	inline Il2CppMethodPointer* get_address_of_method_ptr_0() { return &___method_ptr_0; }
 	inline void set_method_ptr_0(Il2CppMethodPointer value)
@@ -357,7 +357,7 @@ public:
 		___method_ptr_0 = value;
 	}
 
-	inline static int32_t get_offset_of_invoke_impl_1() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___invoke_impl_1)); }
+	inline static int32_t get_offset_of_invoke_impl_1() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___invoke_impl_1)); }
 	inline intptr_t get_invoke_impl_1() const { return ___invoke_impl_1; }
 	inline intptr_t* get_address_of_invoke_impl_1() { return &___invoke_impl_1; }
 	inline void set_invoke_impl_1(intptr_t value)
@@ -365,7 +365,7 @@ public:
 		___invoke_impl_1 = value;
 	}
 
-	inline static int32_t get_offset_of_m_target_2() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___m_target_2)); }
+	inline static int32_t get_offset_of_m_target_2() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___m_target_2)); }
 	inline RuntimeObject * get_m_target_2() const { return ___m_target_2; }
 	inline RuntimeObject ** get_address_of_m_target_2() { return &___m_target_2; }
 	inline void set_m_target_2(RuntimeObject * value)
@@ -374,7 +374,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___m_target_2), value);
 	}
 
-	inline static int32_t get_offset_of_method_3() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___method_3)); }
+	inline static int32_t get_offset_of_method_3() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___method_3)); }
 	inline intptr_t get_method_3() const { return ___method_3; }
 	inline intptr_t* get_address_of_method_3() { return &___method_3; }
 	inline void set_method_3(intptr_t value)
@@ -382,7 +382,7 @@ public:
 		___method_3 = value;
 	}
 
-	inline static int32_t get_offset_of_delegate_trampoline_4() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___delegate_trampoline_4)); }
+	inline static int32_t get_offset_of_delegate_trampoline_4() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___delegate_trampoline_4)); }
 	inline intptr_t get_delegate_trampoline_4() const { return ___delegate_trampoline_4; }
 	inline intptr_t* get_address_of_delegate_trampoline_4() { return &___delegate_trampoline_4; }
 	inline void set_delegate_trampoline_4(intptr_t value)
@@ -390,7 +390,7 @@ public:
 		___delegate_trampoline_4 = value;
 	}
 
-	inline static int32_t get_offset_of_method_code_5() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___method_code_5)); }
+	inline static int32_t get_offset_of_method_code_5() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___method_code_5)); }
 	inline intptr_t get_method_code_5() const { return ___method_code_5; }
 	inline intptr_t* get_address_of_method_code_5() { return &___method_code_5; }
 	inline void set_method_code_5(intptr_t value)
@@ -398,7 +398,7 @@ public:
 		___method_code_5 = value;
 	}
 
-	inline static int32_t get_offset_of_method_info_6() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___method_info_6)); }
+	inline static int32_t get_offset_of_method_info_6() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___method_info_6)); }
 	inline MethodInfo_t * get_method_info_6() const { return ___method_info_6; }
 	inline MethodInfo_t ** get_address_of_method_info_6() { return &___method_info_6; }
 	inline void set_method_info_6(MethodInfo_t * value)
@@ -407,7 +407,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___method_info_6), value);
 	}
 
-	inline static int32_t get_offset_of_original_method_info_7() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___original_method_info_7)); }
+	inline static int32_t get_offset_of_original_method_info_7() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___original_method_info_7)); }
 	inline MethodInfo_t * get_original_method_info_7() const { return ___original_method_info_7; }
 	inline MethodInfo_t ** get_address_of_original_method_info_7() { return &___original_method_info_7; }
 	inline void set_original_method_info_7(MethodInfo_t * value)
@@ -416,10 +416,10 @@ public:
 		Il2CppCodeGenWriteBarrier((&___original_method_info_7), value);
 	}
 
-	inline static int32_t get_offset_of_data_8() { return static_cast<int32_t>(offsetof(Delegate_t1041590898, ___data_8)); }
-	inline DelegateData_t3209800765 * get_data_8() const { return ___data_8; }
-	inline DelegateData_t3209800765 ** get_address_of_data_8() { return &___data_8; }
-	inline void set_data_8(DelegateData_t3209800765 * value)
+	inline static int32_t get_offset_of_data_8() { return static_cast<int32_t>(offsetof(Delegate_t204843831, ___data_8)); }
+	inline DelegateData_t1832777287 * get_data_8() const { return ___data_8; }
+	inline DelegateData_t1832777287 ** get_address_of_data_8() { return &___data_8; }
+	inline void set_data_8(DelegateData_t1832777287 * value)
 	{
 		___data_8 = value;
 		Il2CppCodeGenWriteBarrier((&___data_8), value);
@@ -429,9 +429,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // DELEGATE_T1041590898_H
-#ifndef OBJECT_T901498535_H
-#define OBJECT_T901498535_H
+#endif // DELEGATE_T204843831_H
+#ifndef OBJECT_T3510160113_H
+#define OBJECT_T3510160113_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -439,14 +439,14 @@ public:
 #endif
 
 // UnityEngine.Object
-struct  Object_t901498535  : public RuntimeObject
+struct  Object_t3510160113  : public RuntimeObject
 {
 public:
 	// System.IntPtr UnityEngine.Object::m_CachedPtr
 	intptr_t ___m_CachedPtr_0;
 
 public:
-	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_t901498535, ___m_CachedPtr_0)); }
+	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_t3510160113, ___m_CachedPtr_0)); }
 	inline intptr_t get_m_CachedPtr_0() const { return ___m_CachedPtr_0; }
 	inline intptr_t* get_address_of_m_CachedPtr_0() { return &___m_CachedPtr_0; }
 	inline void set_m_CachedPtr_0(intptr_t value)
@@ -455,14 +455,14 @@ public:
 	}
 };
 
-struct Object_t901498535_StaticFields
+struct Object_t3510160113_StaticFields
 {
 public:
 	// System.Int32 UnityEngine.Object::OffsetOfInstanceIDInCPlusPlusObject
 	int32_t ___OffsetOfInstanceIDInCPlusPlusObject_1;
 
 public:
-	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_t901498535_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
+	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_t3510160113_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
 	inline int32_t get_OffsetOfInstanceIDInCPlusPlusObject_1() const { return ___OffsetOfInstanceIDInCPlusPlusObject_1; }
 	inline int32_t* get_address_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return &___OffsetOfInstanceIDInCPlusPlusObject_1; }
 	inline void set_OffsetOfInstanceIDInCPlusPlusObject_1(int32_t value)
@@ -475,18 +475,18 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of UnityEngine.Object
-struct Object_t901498535_marshaled_pinvoke
+struct Object_t3510160113_marshaled_pinvoke
 {
 	intptr_t ___m_CachedPtr_0;
 };
 // Native definition for COM marshalling of UnityEngine.Object
-struct Object_t901498535_marshaled_com
+struct Object_t3510160113_marshaled_com
 {
 	intptr_t ___m_CachedPtr_0;
 };
-#endif // OBJECT_T901498535_H
-#ifndef MULTICASTDELEGATE_T1463945573_H
-#define MULTICASTDELEGATE_T1463945573_H
+#endif // OBJECT_T3510160113_H
+#ifndef MULTICASTDELEGATE_T2174808184_H
+#define MULTICASTDELEGATE_T2174808184_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -494,28 +494,28 @@ struct Object_t901498535_marshaled_com
 #endif
 
 // System.MulticastDelegate
-struct  MulticastDelegate_t1463945573  : public Delegate_t1041590898
+struct  MulticastDelegate_t2174808184  : public Delegate_t204843831
 {
 public:
 	// System.MulticastDelegate System.MulticastDelegate::prev
-	MulticastDelegate_t1463945573 * ___prev_9;
+	MulticastDelegate_t2174808184 * ___prev_9;
 	// System.MulticastDelegate System.MulticastDelegate::kpm_next
-	MulticastDelegate_t1463945573 * ___kpm_next_10;
+	MulticastDelegate_t2174808184 * ___kpm_next_10;
 
 public:
-	inline static int32_t get_offset_of_prev_9() { return static_cast<int32_t>(offsetof(MulticastDelegate_t1463945573, ___prev_9)); }
-	inline MulticastDelegate_t1463945573 * get_prev_9() const { return ___prev_9; }
-	inline MulticastDelegate_t1463945573 ** get_address_of_prev_9() { return &___prev_9; }
-	inline void set_prev_9(MulticastDelegate_t1463945573 * value)
+	inline static int32_t get_offset_of_prev_9() { return static_cast<int32_t>(offsetof(MulticastDelegate_t2174808184, ___prev_9)); }
+	inline MulticastDelegate_t2174808184 * get_prev_9() const { return ___prev_9; }
+	inline MulticastDelegate_t2174808184 ** get_address_of_prev_9() { return &___prev_9; }
+	inline void set_prev_9(MulticastDelegate_t2174808184 * value)
 	{
 		___prev_9 = value;
 		Il2CppCodeGenWriteBarrier((&___prev_9), value);
 	}
 
-	inline static int32_t get_offset_of_kpm_next_10() { return static_cast<int32_t>(offsetof(MulticastDelegate_t1463945573, ___kpm_next_10)); }
-	inline MulticastDelegate_t1463945573 * get_kpm_next_10() const { return ___kpm_next_10; }
-	inline MulticastDelegate_t1463945573 ** get_address_of_kpm_next_10() { return &___kpm_next_10; }
-	inline void set_kpm_next_10(MulticastDelegate_t1463945573 * value)
+	inline static int32_t get_offset_of_kpm_next_10() { return static_cast<int32_t>(offsetof(MulticastDelegate_t2174808184, ___kpm_next_10)); }
+	inline MulticastDelegate_t2174808184 * get_kpm_next_10() const { return ___kpm_next_10; }
+	inline MulticastDelegate_t2174808184 ** get_address_of_kpm_next_10() { return &___kpm_next_10; }
+	inline void set_kpm_next_10(MulticastDelegate_t2174808184 * value)
 	{
 		___kpm_next_10 = value;
 		Il2CppCodeGenWriteBarrier((&___kpm_next_10), value);
@@ -525,9 +525,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // MULTICASTDELEGATE_T1463945573_H
-#ifndef COMPONENT_T2505973930_H
-#define COMPONENT_T2505973930_H
+#endif // MULTICASTDELEGATE_T2174808184_H
+#ifndef COMPONENT_T3818783958_H
+#define COMPONENT_T3818783958_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -535,7 +535,7 @@ public:
 #endif
 
 // UnityEngine.Component
-struct  Component_t2505973930  : public Object_t901498535
+struct  Component_t3818783958  : public Object_t3510160113
 {
 public:
 
@@ -545,9 +545,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // COMPONENT_T2505973930_H
-#ifndef ERROREVENTHANDLER_T3761464949_H
-#define ERROREVENTHANDLER_T3761464949_H
+#endif // COMPONENT_T3818783958_H
+#ifndef ERROREVENTHANDLER_T3265960182_H
+#define ERROREVENTHANDLER_T3265960182_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -555,7 +555,7 @@ public:
 #endif
 
 // UnityEngine.Video.VideoPlayer/ErrorEventHandler
-struct  ErrorEventHandler_t3761464949  : public MulticastDelegate_t1463945573
+struct  ErrorEventHandler_t3265960182  : public MulticastDelegate_t2174808184
 {
 public:
 
@@ -565,9 +565,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // ERROREVENTHANDLER_T3761464949_H
-#ifndef TIMEEVENTHANDLER_T168690720_H
-#define TIMEEVENTHANDLER_T168690720_H
+#endif // ERROREVENTHANDLER_T3265960182_H
+#ifndef TIMEEVENTHANDLER_T437352763_H
+#define TIMEEVENTHANDLER_T437352763_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -575,7 +575,7 @@ public:
 #endif
 
 // UnityEngine.Video.VideoPlayer/TimeEventHandler
-struct  TimeEventHandler_t168690720  : public MulticastDelegate_t1463945573
+struct  TimeEventHandler_t437352763  : public MulticastDelegate_t2174808184
 {
 public:
 
@@ -585,9 +585,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // TIMEEVENTHANDLER_T168690720_H
-#ifndef EVENTHANDLER_T444358625_H
-#define EVENTHANDLER_T444358625_H
+#endif // TIMEEVENTHANDLER_T437352763_H
+#ifndef EVENTHANDLER_T2287043380_H
+#define EVENTHANDLER_T2287043380_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -595,7 +595,7 @@ public:
 #endif
 
 // UnityEngine.Video.VideoPlayer/EventHandler
-struct  EventHandler_t444358625  : public MulticastDelegate_t1463945573
+struct  EventHandler_t2287043380  : public MulticastDelegate_t2174808184
 {
 public:
 
@@ -605,9 +605,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // EVENTHANDLER_T444358625_H
-#ifndef ASYNCCALLBACK_T3186847474_H
-#define ASYNCCALLBACK_T3186847474_H
+#endif // EVENTHANDLER_T2287043380_H
+#ifndef ASYNCCALLBACK_T3068851518_H
+#define ASYNCCALLBACK_T3068851518_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -615,7 +615,7 @@ public:
 #endif
 
 // System.AsyncCallback
-struct  AsyncCallback_t3186847474  : public MulticastDelegate_t1463945573
+struct  AsyncCallback_t3068851518  : public MulticastDelegate_t2174808184
 {
 public:
 
@@ -625,9 +625,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // ASYNCCALLBACK_T3186847474_H
-#ifndef BEHAVIOUR_T113829722_H
-#define BEHAVIOUR_T113829722_H
+#endif // ASYNCCALLBACK_T3068851518_H
+#ifndef BEHAVIOUR_T459990029_H
+#define BEHAVIOUR_T459990029_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -635,7 +635,7 @@ public:
 #endif
 
 // UnityEngine.Behaviour
-struct  Behaviour_t113829722  : public Component_t2505973930
+struct  Behaviour_t459990029  : public Component_t3818783958
 {
 public:
 
@@ -645,9 +645,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // BEHAVIOUR_T113829722_H
-#ifndef FRAMEREADYEVENTHANDLER_T4268864336_H
-#define FRAMEREADYEVENTHANDLER_T4268864336_H
+#endif // BEHAVIOUR_T459990029_H
+#ifndef FRAMEREADYEVENTHANDLER_T4089457767_H
+#define FRAMEREADYEVENTHANDLER_T4089457767_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -655,7 +655,7 @@ public:
 #endif
 
 // UnityEngine.Video.VideoPlayer/FrameReadyEventHandler
-struct  FrameReadyEventHandler_t4268864336  : public MulticastDelegate_t1463945573
+struct  FrameReadyEventHandler_t4089457767  : public MulticastDelegate_t2174808184
 {
 public:
 
@@ -665,9 +665,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // FRAMEREADYEVENTHANDLER_T4268864336_H
-#ifndef VIDEOPLAYER_T2465340239_H
-#define VIDEOPLAYER_T2465340239_H
+#endif // FRAMEREADYEVENTHANDLER_T4089457767_H
+#ifndef VIDEOPLAYER_T3416264273_H
+#define VIDEOPLAYER_T3416264273_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -675,94 +675,94 @@ public:
 #endif
 
 // UnityEngine.Video.VideoPlayer
-struct  VideoPlayer_t2465340239  : public Behaviour_t113829722
+struct  VideoPlayer_t3416264273  : public Behaviour_t459990029
 {
 public:
 	// UnityEngine.Video.VideoPlayer/EventHandler UnityEngine.Video.VideoPlayer::prepareCompleted
-	EventHandler_t444358625 * ___prepareCompleted_2;
+	EventHandler_t2287043380 * ___prepareCompleted_2;
 	// UnityEngine.Video.VideoPlayer/EventHandler UnityEngine.Video.VideoPlayer::loopPointReached
-	EventHandler_t444358625 * ___loopPointReached_3;
+	EventHandler_t2287043380 * ___loopPointReached_3;
 	// UnityEngine.Video.VideoPlayer/EventHandler UnityEngine.Video.VideoPlayer::started
-	EventHandler_t444358625 * ___started_4;
+	EventHandler_t2287043380 * ___started_4;
 	// UnityEngine.Video.VideoPlayer/EventHandler UnityEngine.Video.VideoPlayer::frameDropped
-	EventHandler_t444358625 * ___frameDropped_5;
+	EventHandler_t2287043380 * ___frameDropped_5;
 	// UnityEngine.Video.VideoPlayer/ErrorEventHandler UnityEngine.Video.VideoPlayer::errorReceived
-	ErrorEventHandler_t3761464949 * ___errorReceived_6;
+	ErrorEventHandler_t3265960182 * ___errorReceived_6;
 	// UnityEngine.Video.VideoPlayer/EventHandler UnityEngine.Video.VideoPlayer::seekCompleted
-	EventHandler_t444358625 * ___seekCompleted_7;
+	EventHandler_t2287043380 * ___seekCompleted_7;
 	// UnityEngine.Video.VideoPlayer/TimeEventHandler UnityEngine.Video.VideoPlayer::clockResyncOccurred
-	TimeEventHandler_t168690720 * ___clockResyncOccurred_8;
+	TimeEventHandler_t437352763 * ___clockResyncOccurred_8;
 	// UnityEngine.Video.VideoPlayer/FrameReadyEventHandler UnityEngine.Video.VideoPlayer::frameReady
-	FrameReadyEventHandler_t4268864336 * ___frameReady_9;
+	FrameReadyEventHandler_t4089457767 * ___frameReady_9;
 
 public:
-	inline static int32_t get_offset_of_prepareCompleted_2() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___prepareCompleted_2)); }
-	inline EventHandler_t444358625 * get_prepareCompleted_2() const { return ___prepareCompleted_2; }
-	inline EventHandler_t444358625 ** get_address_of_prepareCompleted_2() { return &___prepareCompleted_2; }
-	inline void set_prepareCompleted_2(EventHandler_t444358625 * value)
+	inline static int32_t get_offset_of_prepareCompleted_2() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___prepareCompleted_2)); }
+	inline EventHandler_t2287043380 * get_prepareCompleted_2() const { return ___prepareCompleted_2; }
+	inline EventHandler_t2287043380 ** get_address_of_prepareCompleted_2() { return &___prepareCompleted_2; }
+	inline void set_prepareCompleted_2(EventHandler_t2287043380 * value)
 	{
 		___prepareCompleted_2 = value;
 		Il2CppCodeGenWriteBarrier((&___prepareCompleted_2), value);
 	}
 
-	inline static int32_t get_offset_of_loopPointReached_3() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___loopPointReached_3)); }
-	inline EventHandler_t444358625 * get_loopPointReached_3() const { return ___loopPointReached_3; }
-	inline EventHandler_t444358625 ** get_address_of_loopPointReached_3() { return &___loopPointReached_3; }
-	inline void set_loopPointReached_3(EventHandler_t444358625 * value)
+	inline static int32_t get_offset_of_loopPointReached_3() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___loopPointReached_3)); }
+	inline EventHandler_t2287043380 * get_loopPointReached_3() const { return ___loopPointReached_3; }
+	inline EventHandler_t2287043380 ** get_address_of_loopPointReached_3() { return &___loopPointReached_3; }
+	inline void set_loopPointReached_3(EventHandler_t2287043380 * value)
 	{
 		___loopPointReached_3 = value;
 		Il2CppCodeGenWriteBarrier((&___loopPointReached_3), value);
 	}
 
-	inline static int32_t get_offset_of_started_4() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___started_4)); }
-	inline EventHandler_t444358625 * get_started_4() const { return ___started_4; }
-	inline EventHandler_t444358625 ** get_address_of_started_4() { return &___started_4; }
-	inline void set_started_4(EventHandler_t444358625 * value)
+	inline static int32_t get_offset_of_started_4() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___started_4)); }
+	inline EventHandler_t2287043380 * get_started_4() const { return ___started_4; }
+	inline EventHandler_t2287043380 ** get_address_of_started_4() { return &___started_4; }
+	inline void set_started_4(EventHandler_t2287043380 * value)
 	{
 		___started_4 = value;
 		Il2CppCodeGenWriteBarrier((&___started_4), value);
 	}
 
-	inline static int32_t get_offset_of_frameDropped_5() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___frameDropped_5)); }
-	inline EventHandler_t444358625 * get_frameDropped_5() const { return ___frameDropped_5; }
-	inline EventHandler_t444358625 ** get_address_of_frameDropped_5() { return &___frameDropped_5; }
-	inline void set_frameDropped_5(EventHandler_t444358625 * value)
+	inline static int32_t get_offset_of_frameDropped_5() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___frameDropped_5)); }
+	inline EventHandler_t2287043380 * get_frameDropped_5() const { return ___frameDropped_5; }
+	inline EventHandler_t2287043380 ** get_address_of_frameDropped_5() { return &___frameDropped_5; }
+	inline void set_frameDropped_5(EventHandler_t2287043380 * value)
 	{
 		___frameDropped_5 = value;
 		Il2CppCodeGenWriteBarrier((&___frameDropped_5), value);
 	}
 
-	inline static int32_t get_offset_of_errorReceived_6() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___errorReceived_6)); }
-	inline ErrorEventHandler_t3761464949 * get_errorReceived_6() const { return ___errorReceived_6; }
-	inline ErrorEventHandler_t3761464949 ** get_address_of_errorReceived_6() { return &___errorReceived_6; }
-	inline void set_errorReceived_6(ErrorEventHandler_t3761464949 * value)
+	inline static int32_t get_offset_of_errorReceived_6() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___errorReceived_6)); }
+	inline ErrorEventHandler_t3265960182 * get_errorReceived_6() const { return ___errorReceived_6; }
+	inline ErrorEventHandler_t3265960182 ** get_address_of_errorReceived_6() { return &___errorReceived_6; }
+	inline void set_errorReceived_6(ErrorEventHandler_t3265960182 * value)
 	{
 		___errorReceived_6 = value;
 		Il2CppCodeGenWriteBarrier((&___errorReceived_6), value);
 	}
 
-	inline static int32_t get_offset_of_seekCompleted_7() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___seekCompleted_7)); }
-	inline EventHandler_t444358625 * get_seekCompleted_7() const { return ___seekCompleted_7; }
-	inline EventHandler_t444358625 ** get_address_of_seekCompleted_7() { return &___seekCompleted_7; }
-	inline void set_seekCompleted_7(EventHandler_t444358625 * value)
+	inline static int32_t get_offset_of_seekCompleted_7() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___seekCompleted_7)); }
+	inline EventHandler_t2287043380 * get_seekCompleted_7() const { return ___seekCompleted_7; }
+	inline EventHandler_t2287043380 ** get_address_of_seekCompleted_7() { return &___seekCompleted_7; }
+	inline void set_seekCompleted_7(EventHandler_t2287043380 * value)
 	{
 		___seekCompleted_7 = value;
 		Il2CppCodeGenWriteBarrier((&___seekCompleted_7), value);
 	}
 
-	inline static int32_t get_offset_of_clockResyncOccurred_8() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___clockResyncOccurred_8)); }
-	inline TimeEventHandler_t168690720 * get_clockResyncOccurred_8() const { return ___clockResyncOccurred_8; }
-	inline TimeEventHandler_t168690720 ** get_address_of_clockResyncOccurred_8() { return &___clockResyncOccurred_8; }
-	inline void set_clockResyncOccurred_8(TimeEventHandler_t168690720 * value)
+	inline static int32_t get_offset_of_clockResyncOccurred_8() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___clockResyncOccurred_8)); }
+	inline TimeEventHandler_t437352763 * get_clockResyncOccurred_8() const { return ___clockResyncOccurred_8; }
+	inline TimeEventHandler_t437352763 ** get_address_of_clockResyncOccurred_8() { return &___clockResyncOccurred_8; }
+	inline void set_clockResyncOccurred_8(TimeEventHandler_t437352763 * value)
 	{
 		___clockResyncOccurred_8 = value;
 		Il2CppCodeGenWriteBarrier((&___clockResyncOccurred_8), value);
 	}
 
-	inline static int32_t get_offset_of_frameReady_9() { return static_cast<int32_t>(offsetof(VideoPlayer_t2465340239, ___frameReady_9)); }
-	inline FrameReadyEventHandler_t4268864336 * get_frameReady_9() const { return ___frameReady_9; }
-	inline FrameReadyEventHandler_t4268864336 ** get_address_of_frameReady_9() { return &___frameReady_9; }
-	inline void set_frameReady_9(FrameReadyEventHandler_t4268864336 * value)
+	inline static int32_t get_offset_of_frameReady_9() { return static_cast<int32_t>(offsetof(VideoPlayer_t3416264273, ___frameReady_9)); }
+	inline FrameReadyEventHandler_t4089457767 * get_frameReady_9() const { return ___frameReady_9; }
+	inline FrameReadyEventHandler_t4089457767 ** get_address_of_frameReady_9() { return &___frameReady_9; }
+	inline void set_frameReady_9(FrameReadyEventHandler_t4089457767 * value)
 	{
 		___frameReady_9 = value;
 		Il2CppCodeGenWriteBarrier((&___frameReady_9), value);
@@ -772,42 +772,42 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // VIDEOPLAYER_T2465340239_H
+#endif // VIDEOPLAYER_T3416264273_H
 
 
 
 // System.Void UnityEngine.Video.VideoPlayer/EventHandler::Invoke(UnityEngine.Video.VideoPlayer)
-extern "C"  void EventHandler_Invoke_m789232664 (EventHandler_t444358625 * __this, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C"  void EventHandler_Invoke_m919979957 (EventHandler_t2287043380 * __this, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Video.VideoPlayer/FrameReadyEventHandler::Invoke(UnityEngine.Video.VideoPlayer,System.Int64)
-extern "C"  void FrameReadyEventHandler_Invoke_m426459728 (FrameReadyEventHandler_t4268864336 * __this, VideoPlayer_t2465340239 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C"  void FrameReadyEventHandler_Invoke_m2758111203 (FrameReadyEventHandler_t4089457767 * __this, VideoPlayer_t3416264273 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Video.VideoPlayer/ErrorEventHandler::Invoke(UnityEngine.Video.VideoPlayer,System.String)
-extern "C"  void ErrorEventHandler_Invoke_m1254972089 (ErrorEventHandler_t3761464949 * __this, VideoPlayer_t2465340239 * ___source0, String_t* ___message1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C"  void ErrorEventHandler_Invoke_m1543685187 (ErrorEventHandler_t3265960182 * __this, VideoPlayer_t3416264273 * ___source0, String_t* ___message1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Video.VideoPlayer/TimeEventHandler::Invoke(UnityEngine.Video.VideoPlayer,System.Double)
-extern "C"  void TimeEventHandler_Invoke_m2621087420 (TimeEventHandler_t168690720 * __this, VideoPlayer_t2465340239 * ___source0, double ___seconds1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+extern "C"  void TimeEventHandler_Invoke_m2272597566 (TimeEventHandler_t437352763 * __this, VideoPlayer_t3416264273 * ___source0, double ___seconds1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Video.VideoPlayer::InvokePrepareCompletedCallback_Internal(UnityEngine.Video.VideoPlayer)
-extern "C"  void VideoPlayer_InvokePrepareCompletedCallback_Internal_m1389518190 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokePrepareCompletedCallback_Internal_m1069905865 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		EventHandler_t444358625 * L_1 = L_0->get_prepareCompleted_2();
+		EventHandler_t2287043380 * L_1 = L_0->get_prepareCompleted_2();
 		if (!L_1)
 		{
 			goto IL_0018;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		EventHandler_t444358625 * L_3 = L_2->get_prepareCompleted_2();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		EventHandler_t2287043380 * L_3 = L_2->get_prepareCompleted_2();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		NullCheck(L_3);
-		EventHandler_Invoke_m789232664(L_3, L_4, /*hidden argument*/NULL);
+		EventHandler_Invoke_m919979957(L_3, L_4, /*hidden argument*/NULL);
 	}
 
 IL_0018:
@@ -816,25 +816,25 @@ IL_0018:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer::InvokeFrameReadyCallback_Internal(UnityEngine.Video.VideoPlayer,System.Int64)
-extern "C"  void VideoPlayer_InvokeFrameReadyCallback_Internal_m1648128259 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokeFrameReadyCallback_Internal_m99292300 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		FrameReadyEventHandler_t4268864336 * L_1 = L_0->get_frameReady_9();
+		FrameReadyEventHandler_t4089457767 * L_1 = L_0->get_frameReady_9();
 		if (!L_1)
 		{
 			goto IL_0019;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		FrameReadyEventHandler_t4268864336 * L_3 = L_2->get_frameReady_9();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		FrameReadyEventHandler_t4089457767 * L_3 = L_2->get_frameReady_9();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		int64_t L_5 = ___frameIdx1;
 		NullCheck(L_3);
-		FrameReadyEventHandler_Invoke_m426459728(L_3, L_4, L_5, /*hidden argument*/NULL);
+		FrameReadyEventHandler_Invoke_m2758111203(L_3, L_4, L_5, /*hidden argument*/NULL);
 	}
 
 IL_0019:
@@ -843,24 +843,24 @@ IL_0019:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer::InvokeLoopPointReachedCallback_Internal(UnityEngine.Video.VideoPlayer)
-extern "C"  void VideoPlayer_InvokeLoopPointReachedCallback_Internal_m729471132 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokeLoopPointReachedCallback_Internal_m1383724755 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		EventHandler_t444358625 * L_1 = L_0->get_loopPointReached_3();
+		EventHandler_t2287043380 * L_1 = L_0->get_loopPointReached_3();
 		if (!L_1)
 		{
 			goto IL_0018;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		EventHandler_t444358625 * L_3 = L_2->get_loopPointReached_3();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		EventHandler_t2287043380 * L_3 = L_2->get_loopPointReached_3();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		NullCheck(L_3);
-		EventHandler_Invoke_m789232664(L_3, L_4, /*hidden argument*/NULL);
+		EventHandler_Invoke_m919979957(L_3, L_4, /*hidden argument*/NULL);
 	}
 
 IL_0018:
@@ -869,24 +869,24 @@ IL_0018:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer::InvokeStartedCallback_Internal(UnityEngine.Video.VideoPlayer)
-extern "C"  void VideoPlayer_InvokeStartedCallback_Internal_m1124916302 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokeStartedCallback_Internal_m571440172 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		EventHandler_t444358625 * L_1 = L_0->get_started_4();
+		EventHandler_t2287043380 * L_1 = L_0->get_started_4();
 		if (!L_1)
 		{
 			goto IL_0018;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		EventHandler_t444358625 * L_3 = L_2->get_started_4();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		EventHandler_t2287043380 * L_3 = L_2->get_started_4();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		NullCheck(L_3);
-		EventHandler_Invoke_m789232664(L_3, L_4, /*hidden argument*/NULL);
+		EventHandler_Invoke_m919979957(L_3, L_4, /*hidden argument*/NULL);
 	}
 
 IL_0018:
@@ -895,24 +895,24 @@ IL_0018:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer::InvokeFrameDroppedCallback_Internal(UnityEngine.Video.VideoPlayer)
-extern "C"  void VideoPlayer_InvokeFrameDroppedCallback_Internal_m3225474771 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokeFrameDroppedCallback_Internal_m410104132 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		EventHandler_t444358625 * L_1 = L_0->get_frameDropped_5();
+		EventHandler_t2287043380 * L_1 = L_0->get_frameDropped_5();
 		if (!L_1)
 		{
 			goto IL_0018;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		EventHandler_t444358625 * L_3 = L_2->get_frameDropped_5();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		EventHandler_t2287043380 * L_3 = L_2->get_frameDropped_5();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		NullCheck(L_3);
-		EventHandler_Invoke_m789232664(L_3, L_4, /*hidden argument*/NULL);
+		EventHandler_Invoke_m919979957(L_3, L_4, /*hidden argument*/NULL);
 	}
 
 IL_0018:
@@ -921,25 +921,25 @@ IL_0018:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer::InvokeErrorReceivedCallback_Internal(UnityEngine.Video.VideoPlayer,System.String)
-extern "C"  void VideoPlayer_InvokeErrorReceivedCallback_Internal_m643025498 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, String_t* ___errorStr1, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokeErrorReceivedCallback_Internal_m3607763901 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, String_t* ___errorStr1, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		ErrorEventHandler_t3761464949 * L_1 = L_0->get_errorReceived_6();
+		ErrorEventHandler_t3265960182 * L_1 = L_0->get_errorReceived_6();
 		if (!L_1)
 		{
 			goto IL_0019;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		ErrorEventHandler_t3761464949 * L_3 = L_2->get_errorReceived_6();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		ErrorEventHandler_t3265960182 * L_3 = L_2->get_errorReceived_6();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		String_t* L_5 = ___errorStr1;
 		NullCheck(L_3);
-		ErrorEventHandler_Invoke_m1254972089(L_3, L_4, L_5, /*hidden argument*/NULL);
+		ErrorEventHandler_Invoke_m1543685187(L_3, L_4, L_5, /*hidden argument*/NULL);
 	}
 
 IL_0019:
@@ -948,24 +948,24 @@ IL_0019:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer::InvokeSeekCompletedCallback_Internal(UnityEngine.Video.VideoPlayer)
-extern "C"  void VideoPlayer_InvokeSeekCompletedCallback_Internal_m1538047287 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokeSeekCompletedCallback_Internal_m3793901016 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		EventHandler_t444358625 * L_1 = L_0->get_seekCompleted_7();
+		EventHandler_t2287043380 * L_1 = L_0->get_seekCompleted_7();
 		if (!L_1)
 		{
 			goto IL_0018;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		EventHandler_t444358625 * L_3 = L_2->get_seekCompleted_7();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		EventHandler_t2287043380 * L_3 = L_2->get_seekCompleted_7();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		NullCheck(L_3);
-		EventHandler_Invoke_m789232664(L_3, L_4, /*hidden argument*/NULL);
+		EventHandler_Invoke_m919979957(L_3, L_4, /*hidden argument*/NULL);
 	}
 
 IL_0018:
@@ -974,25 +974,25 @@ IL_0018:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer::InvokeClockResyncOccurredCallback_Internal(UnityEngine.Video.VideoPlayer,System.Double)
-extern "C"  void VideoPlayer_InvokeClockResyncOccurredCallback_Internal_m3988537572 (RuntimeObject * __this /* static, unused */, VideoPlayer_t2465340239 * ___source0, double ___seconds1, const RuntimeMethod* method)
+extern "C"  void VideoPlayer_InvokeClockResyncOccurredCallback_Internal_m1037722995 (RuntimeObject * __this /* static, unused */, VideoPlayer_t3416264273 * ___source0, double ___seconds1, const RuntimeMethod* method)
 {
 	{
-		VideoPlayer_t2465340239 * L_0 = ___source0;
+		VideoPlayer_t3416264273 * L_0 = ___source0;
 		NullCheck(L_0);
-		TimeEventHandler_t168690720 * L_1 = L_0->get_clockResyncOccurred_8();
+		TimeEventHandler_t437352763 * L_1 = L_0->get_clockResyncOccurred_8();
 		if (!L_1)
 		{
 			goto IL_0019;
 		}
 	}
 	{
-		VideoPlayer_t2465340239 * L_2 = ___source0;
+		VideoPlayer_t3416264273 * L_2 = ___source0;
 		NullCheck(L_2);
-		TimeEventHandler_t168690720 * L_3 = L_2->get_clockResyncOccurred_8();
-		VideoPlayer_t2465340239 * L_4 = ___source0;
+		TimeEventHandler_t437352763 * L_3 = L_2->get_clockResyncOccurred_8();
+		VideoPlayer_t3416264273 * L_4 = ___source0;
 		double L_5 = ___seconds1;
 		NullCheck(L_3);
-		TimeEventHandler_Invoke_m2621087420(L_3, L_4, L_5, /*hidden argument*/NULL);
+		TimeEventHandler_Invoke_m2272597566(L_3, L_4, L_5, /*hidden argument*/NULL);
 	}
 
 IL_0019:
@@ -1001,29 +1001,29 @@ IL_0019:
 	}
 }
 // System.Void UnityEngine.Video.VideoPlayer/ErrorEventHandler::.ctor(System.Object,System.IntPtr)
-extern "C"  void ErrorEventHandler__ctor_m1748712458 (ErrorEventHandler_t3761464949 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
+extern "C"  void ErrorEventHandler__ctor_m2344384858 (ErrorEventHandler_t3265960182 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
 	__this->set_method_ptr_0(il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1));
 	__this->set_method_3(___method1);
 	__this->set_m_target_2(___object0);
 }
 // System.Void UnityEngine.Video.VideoPlayer/ErrorEventHandler::Invoke(UnityEngine.Video.VideoPlayer,System.String)
-extern "C"  void ErrorEventHandler_Invoke_m1254972089 (ErrorEventHandler_t3761464949 * __this, VideoPlayer_t2465340239 * ___source0, String_t* ___message1, const RuntimeMethod* method)
+extern "C"  void ErrorEventHandler_Invoke_m1543685187 (ErrorEventHandler_t3265960182 * __this, VideoPlayer_t3416264273 * ___source0, String_t* ___message1, const RuntimeMethod* method)
 {
 	if(__this->get_prev_9() != NULL)
 	{
-		ErrorEventHandler_Invoke_m1254972089((ErrorEventHandler_t3761464949 *)__this->get_prev_9(),___source0, ___message1, method);
+		ErrorEventHandler_Invoke_m1543685187((ErrorEventHandler_t3265960182 *)__this->get_prev_9(),___source0, ___message1, method);
 	}
 	il2cpp_codegen_raise_execution_engine_exception_if_method_is_not_found((RuntimeMethod*)(__this->get_method_3()));
 	bool ___methodIsStatic = MethodIsStatic((RuntimeMethod*)(__this->get_method_3()));
 	if (__this->get_m_target_2() != NULL && ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t2465340239 * ___source0, String_t* ___message1, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t3416264273 * ___source0, String_t* ___message1, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(NULL,__this->get_m_target_2(),___source0, ___message1,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else if (__this->get_m_target_2() != NULL || ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t2465340239 * ___source0, String_t* ___message1, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t3416264273 * ___source0, String_t* ___message1, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(__this->get_m_target_2(),___source0, ___message1,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else
@@ -1033,7 +1033,7 @@ extern "C"  void ErrorEventHandler_Invoke_m1254972089 (ErrorEventHandler_t376146
 	}
 }
 // System.IAsyncResult UnityEngine.Video.VideoPlayer/ErrorEventHandler::BeginInvoke(UnityEngine.Video.VideoPlayer,System.String,System.AsyncCallback,System.Object)
-extern "C"  RuntimeObject* ErrorEventHandler_BeginInvoke_m1542640864 (ErrorEventHandler_t3761464949 * __this, VideoPlayer_t2465340239 * ___source0, String_t* ___message1, AsyncCallback_t3186847474 * ___callback2, RuntimeObject * ___object3, const RuntimeMethod* method)
+extern "C"  RuntimeObject* ErrorEventHandler_BeginInvoke_m3327209668 (ErrorEventHandler_t3265960182 * __this, VideoPlayer_t3416264273 * ___source0, String_t* ___message1, AsyncCallback_t3068851518 * ___callback2, RuntimeObject * ___object3, const RuntimeMethod* method)
 {
 	void *__d_args[3] = {0};
 	__d_args[0] = ___source0;
@@ -1041,34 +1041,34 @@ extern "C"  RuntimeObject* ErrorEventHandler_BeginInvoke_m1542640864 (ErrorEvent
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback2, (RuntimeObject*)___object3);
 }
 // System.Void UnityEngine.Video.VideoPlayer/ErrorEventHandler::EndInvoke(System.IAsyncResult)
-extern "C"  void ErrorEventHandler_EndInvoke_m3079203716 (ErrorEventHandler_t3761464949 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
+extern "C"  void ErrorEventHandler_EndInvoke_m1529653569 (ErrorEventHandler_t3265960182 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
 }
 // System.Void UnityEngine.Video.VideoPlayer/EventHandler::.ctor(System.Object,System.IntPtr)
-extern "C"  void EventHandler__ctor_m1560091177 (EventHandler_t444358625 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
+extern "C"  void EventHandler__ctor_m1660441597 (EventHandler_t2287043380 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
 	__this->set_method_ptr_0(il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1));
 	__this->set_method_3(___method1);
 	__this->set_m_target_2(___object0);
 }
 // System.Void UnityEngine.Video.VideoPlayer/EventHandler::Invoke(UnityEngine.Video.VideoPlayer)
-extern "C"  void EventHandler_Invoke_m789232664 (EventHandler_t444358625 * __this, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method)
+extern "C"  void EventHandler_Invoke_m919979957 (EventHandler_t2287043380 * __this, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method)
 {
 	if(__this->get_prev_9() != NULL)
 	{
-		EventHandler_Invoke_m789232664((EventHandler_t444358625 *)__this->get_prev_9(),___source0, method);
+		EventHandler_Invoke_m919979957((EventHandler_t2287043380 *)__this->get_prev_9(),___source0, method);
 	}
 	il2cpp_codegen_raise_execution_engine_exception_if_method_is_not_found((RuntimeMethod*)(__this->get_method_3()));
 	bool ___methodIsStatic = MethodIsStatic((RuntimeMethod*)(__this->get_method_3()));
 	if (__this->get_m_target_2() != NULL && ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(NULL,__this->get_m_target_2(),___source0,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else if (__this->get_m_target_2() != NULL || ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t2465340239 * ___source0, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t3416264273 * ___source0, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(__this->get_m_target_2(),___source0,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else
@@ -1078,41 +1078,41 @@ extern "C"  void EventHandler_Invoke_m789232664 (EventHandler_t444358625 * __thi
 	}
 }
 // System.IAsyncResult UnityEngine.Video.VideoPlayer/EventHandler::BeginInvoke(UnityEngine.Video.VideoPlayer,System.AsyncCallback,System.Object)
-extern "C"  RuntimeObject* EventHandler_BeginInvoke_m2239336563 (EventHandler_t444358625 * __this, VideoPlayer_t2465340239 * ___source0, AsyncCallback_t3186847474 * ___callback1, RuntimeObject * ___object2, const RuntimeMethod* method)
+extern "C"  RuntimeObject* EventHandler_BeginInvoke_m2709369116 (EventHandler_t2287043380 * __this, VideoPlayer_t3416264273 * ___source0, AsyncCallback_t3068851518 * ___callback1, RuntimeObject * ___object2, const RuntimeMethod* method)
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___source0;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback1, (RuntimeObject*)___object2);
 }
 // System.Void UnityEngine.Video.VideoPlayer/EventHandler::EndInvoke(System.IAsyncResult)
-extern "C"  void EventHandler_EndInvoke_m3938514729 (EventHandler_t444358625 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
+extern "C"  void EventHandler_EndInvoke_m3446056198 (EventHandler_t2287043380 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
 }
 // System.Void UnityEngine.Video.VideoPlayer/FrameReadyEventHandler::.ctor(System.Object,System.IntPtr)
-extern "C"  void FrameReadyEventHandler__ctor_m333672913 (FrameReadyEventHandler_t4268864336 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
+extern "C"  void FrameReadyEventHandler__ctor_m1692303438 (FrameReadyEventHandler_t4089457767 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
 	__this->set_method_ptr_0(il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1));
 	__this->set_method_3(___method1);
 	__this->set_m_target_2(___object0);
 }
 // System.Void UnityEngine.Video.VideoPlayer/FrameReadyEventHandler::Invoke(UnityEngine.Video.VideoPlayer,System.Int64)
-extern "C"  void FrameReadyEventHandler_Invoke_m426459728 (FrameReadyEventHandler_t4268864336 * __this, VideoPlayer_t2465340239 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method)
+extern "C"  void FrameReadyEventHandler_Invoke_m2758111203 (FrameReadyEventHandler_t4089457767 * __this, VideoPlayer_t3416264273 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method)
 {
 	if(__this->get_prev_9() != NULL)
 	{
-		FrameReadyEventHandler_Invoke_m426459728((FrameReadyEventHandler_t4268864336 *)__this->get_prev_9(),___source0, ___frameIdx1, method);
+		FrameReadyEventHandler_Invoke_m2758111203((FrameReadyEventHandler_t4089457767 *)__this->get_prev_9(),___source0, ___frameIdx1, method);
 	}
 	il2cpp_codegen_raise_execution_engine_exception_if_method_is_not_found((RuntimeMethod*)(__this->get_method_3()));
 	bool ___methodIsStatic = MethodIsStatic((RuntimeMethod*)(__this->get_method_3()));
 	if (__this->get_m_target_2() != NULL && ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t2465340239 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t3416264273 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(NULL,__this->get_m_target_2(),___source0, ___frameIdx1,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else if (__this->get_m_target_2() != NULL || ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t2465340239 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t3416264273 * ___source0, int64_t ___frameIdx1, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(__this->get_m_target_2(),___source0, ___frameIdx1,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else
@@ -1122,48 +1122,48 @@ extern "C"  void FrameReadyEventHandler_Invoke_m426459728 (FrameReadyEventHandle
 	}
 }
 // System.IAsyncResult UnityEngine.Video.VideoPlayer/FrameReadyEventHandler::BeginInvoke(UnityEngine.Video.VideoPlayer,System.Int64,System.AsyncCallback,System.Object)
-extern "C"  RuntimeObject* FrameReadyEventHandler_BeginInvoke_m864164185 (FrameReadyEventHandler_t4268864336 * __this, VideoPlayer_t2465340239 * ___source0, int64_t ___frameIdx1, AsyncCallback_t3186847474 * ___callback2, RuntimeObject * ___object3, const RuntimeMethod* method)
+extern "C"  RuntimeObject* FrameReadyEventHandler_BeginInvoke_m1587242780 (FrameReadyEventHandler_t4089457767 * __this, VideoPlayer_t3416264273 * ___source0, int64_t ___frameIdx1, AsyncCallback_t3068851518 * ___callback2, RuntimeObject * ___object3, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (FrameReadyEventHandler_BeginInvoke_m864164185_MetadataUsageId);
+		il2cpp_codegen_initialize_method (FrameReadyEventHandler_BeginInvoke_m1587242780_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	void *__d_args[3] = {0};
 	__d_args[0] = ___source0;
-	__d_args[1] = Box(Int64_t1452987365_il2cpp_TypeInfo_var, &___frameIdx1);
+	__d_args[1] = Box(Int64_t1599470356_il2cpp_TypeInfo_var, &___frameIdx1);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback2, (RuntimeObject*)___object3);
 }
 // System.Void UnityEngine.Video.VideoPlayer/FrameReadyEventHandler::EndInvoke(System.IAsyncResult)
-extern "C"  void FrameReadyEventHandler_EndInvoke_m4144594423 (FrameReadyEventHandler_t4268864336 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
+extern "C"  void FrameReadyEventHandler_EndInvoke_m2891252559 (FrameReadyEventHandler_t4089457767 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
 }
 // System.Void UnityEngine.Video.VideoPlayer/TimeEventHandler::.ctor(System.Object,System.IntPtr)
-extern "C"  void TimeEventHandler__ctor_m3658104082 (TimeEventHandler_t168690720 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
+extern "C"  void TimeEventHandler__ctor_m1490400458 (TimeEventHandler_t437352763 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
 	__this->set_method_ptr_0(il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1));
 	__this->set_method_3(___method1);
 	__this->set_m_target_2(___object0);
 }
 // System.Void UnityEngine.Video.VideoPlayer/TimeEventHandler::Invoke(UnityEngine.Video.VideoPlayer,System.Double)
-extern "C"  void TimeEventHandler_Invoke_m2621087420 (TimeEventHandler_t168690720 * __this, VideoPlayer_t2465340239 * ___source0, double ___seconds1, const RuntimeMethod* method)
+extern "C"  void TimeEventHandler_Invoke_m2272597566 (TimeEventHandler_t437352763 * __this, VideoPlayer_t3416264273 * ___source0, double ___seconds1, const RuntimeMethod* method)
 {
 	if(__this->get_prev_9() != NULL)
 	{
-		TimeEventHandler_Invoke_m2621087420((TimeEventHandler_t168690720 *)__this->get_prev_9(),___source0, ___seconds1, method);
+		TimeEventHandler_Invoke_m2272597566((TimeEventHandler_t437352763 *)__this->get_prev_9(),___source0, ___seconds1, method);
 	}
 	il2cpp_codegen_raise_execution_engine_exception_if_method_is_not_found((RuntimeMethod*)(__this->get_method_3()));
 	bool ___methodIsStatic = MethodIsStatic((RuntimeMethod*)(__this->get_method_3()));
 	if (__this->get_m_target_2() != NULL && ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t2465340239 * ___source0, double ___seconds1, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (RuntimeObject *, void* __this, VideoPlayer_t3416264273 * ___source0, double ___seconds1, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(NULL,__this->get_m_target_2(),___source0, ___seconds1,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else if (__this->get_m_target_2() != NULL || ___methodIsStatic)
 	{
-		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t2465340239 * ___source0, double ___seconds1, const RuntimeMethod* method);
+		typedef void (*FunctionPointerType) (void* __this, VideoPlayer_t3416264273 * ___source0, double ___seconds1, const RuntimeMethod* method);
 		((FunctionPointerType)__this->get_method_ptr_0())(__this->get_m_target_2(),___source0, ___seconds1,(RuntimeMethod*)(__this->get_method_3()));
 	}
 	else
@@ -1173,21 +1173,21 @@ extern "C"  void TimeEventHandler_Invoke_m2621087420 (TimeEventHandler_t16869072
 	}
 }
 // System.IAsyncResult UnityEngine.Video.VideoPlayer/TimeEventHandler::BeginInvoke(UnityEngine.Video.VideoPlayer,System.Double,System.AsyncCallback,System.Object)
-extern "C"  RuntimeObject* TimeEventHandler_BeginInvoke_m1748198991 (TimeEventHandler_t168690720 * __this, VideoPlayer_t2465340239 * ___source0, double ___seconds1, AsyncCallback_t3186847474 * ___callback2, RuntimeObject * ___object3, const RuntimeMethod* method)
+extern "C"  RuntimeObject* TimeEventHandler_BeginInvoke_m2536437513 (TimeEventHandler_t437352763 * __this, VideoPlayer_t3416264273 * ___source0, double ___seconds1, AsyncCallback_t3068851518 * ___callback2, RuntimeObject * ___object3, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TimeEventHandler_BeginInvoke_m1748198991_MetadataUsageId);
+		il2cpp_codegen_initialize_method (TimeEventHandler_BeginInvoke_m2536437513_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	void *__d_args[3] = {0};
 	__d_args[0] = ___source0;
-	__d_args[1] = Box(Double_t716971719_il2cpp_TypeInfo_var, &___seconds1);
+	__d_args[1] = Box(Double_t934487946_il2cpp_TypeInfo_var, &___seconds1);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback2, (RuntimeObject*)___object3);
 }
 // System.Void UnityEngine.Video.VideoPlayer/TimeEventHandler::EndInvoke(System.IAsyncResult)
-extern "C"  void TimeEventHandler_EndInvoke_m3115391949 (TimeEventHandler_t168690720 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
+extern "C"  void TimeEventHandler_EndInvoke_m4059308500 (TimeEventHandler_t437352763 * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
 }

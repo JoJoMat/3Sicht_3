@@ -532,6 +532,7 @@ public class LoadLevel : MonoBehaviour {
 
 	IEnumerator UploadFile()
 	{
+		print ("Daten werden hochgeladen");
 		var sr = new StreamReader (Application.persistentDataPath + "/0.json");
 		var fileContents = sr.ReadToEnd ();
 		sr.Close ();
@@ -574,6 +575,7 @@ public class LoadLevel : MonoBehaviour {
 		if (www.error != null) {
 			GetComponent<Alert> ().showAlert("ERROR", "Kein Internet?", "Ok");
 		} else {
+			playerID = aktuelleTan;
 			print (www.text);
 			if (www.text != "") {
 				if (www.text.Contains ("admin")) {
@@ -610,6 +612,10 @@ public class LoadLevel : MonoBehaviour {
 			print (www.error); 
 		} else {
 			print (www.text); //Ausgabe PHP
+			Application.Quit();
+			#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+			#endif
 		}
 	}
 
@@ -642,7 +648,6 @@ public class LoadLevel : MonoBehaviour {
 		var form = new WWWForm ();
 		form.AddField ("Benutzer", texte [0].text); 
 		form.AddField ("PW", texte [1].text); 
-		playerID = texte [0].text;
 		WWW www = new WWW (checkPWLink, form); 
 		GetComponent<Alert> ().showAlert2("VERBINDUNG WIRD HERGESTELLT");
 		yield return www;
@@ -655,6 +660,7 @@ public class LoadLevel : MonoBehaviour {
 				if (www.text.Contains ("admin")) {
 					print ("admin hat sich eingeloggt");
 					admin = true;
+					playerID = "admin"; //da TAN bei admin-Login übersprungen wird
 					level += 1;
 					GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
 					GetComponent<LoginChecker> ().uploadButton.SetActive (true);
