@@ -615,9 +615,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: f3f8a17b-91bf-4568-ac9e-720dfaab7a6a
-  projectName: 3Sicht
-  organizationId: macstuddy
+  cloudProjectId: c003d610-f132-4478-96c7-efadae5d3d1d
+  projectName: 3Sicht (1)
+  organizationId: unity_m30ug89-7pvzhw
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

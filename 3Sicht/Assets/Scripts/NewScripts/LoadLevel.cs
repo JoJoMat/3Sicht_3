@@ -129,6 +129,7 @@ public class LoadLevel : MonoBehaviour {
 	public string checkTANLink = "http://www.aodserver.mobi/3Sicht/checkTan.php";
 	public string deleteTANLink = "http://www.aodserver.mobi/3Sicht/deleteTan.php";
 	public string checkPWLink = "http://www.aodserver.mobi/3Sicht/checkPW.php";
+	public string generateTANLink = "http://www.aodserver.mobi/3Sicht/generateTAN.php";
 
 	public bool rotateIsActive = true;
 
@@ -435,16 +436,16 @@ public class LoadLevel : MonoBehaviour {
 		return enc;
 	}
 
-	public void generateTAN()
-	{
-		string newTan = "";
-		string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-		for (int i = 0; i < 5; i++) {
-			char c = chars[Random.Range(0,chars.Length)]; 
-			newTan = newTan + c; //5 mal wird ein neues Zeichen hinzugefügt
-		}
-		tan.Add (newTan);
-	}
+//	public void generateTAN()
+//	{
+//		string newTan = "";
+//		string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+//		for (int i = 0; i < 5; i++) {
+//			char c = chars[Random.Range(0,chars.Length)]; 
+//			newTan = newTan + c; //5 mal wird ein neues Zeichen hinzugefügt
+//		}
+//		tan.Add (newTan);
+//	}
 
 	public void uploadDatabase()
 	{
@@ -564,6 +565,7 @@ public class LoadLevel : MonoBehaviour {
 	{
 		aktuelleTan = GetComponent<LoadLevel> ().gameTyp [11].GetComponentInChildren<Text> ().text;
 		var form = new WWWForm ();
+		print ("aktuelleTan: " + aktuelleTan);
 		form.AddField ("Tan", aktuelleTan); 
 		WWW www = new WWW (checkTANLink, form); 
 		GetComponent<Alert> ().showAlert2("VERBINDUNG WIRD HERGESTELLT");
@@ -573,18 +575,20 @@ public class LoadLevel : MonoBehaviour {
 			GetComponent<Alert> ().showAlert("ERROR", "Kein Internet?", "Ok");
 		} else {
 			print (www.text);
-			if (www.text == "admin") {
-				print ("MasterTAN eingesetzt");
-				aktuelleTan = "unmöglichzuentfernenderTANblaundnochnpaarZeichen*$%/§€‰jodassolltereichen";
-				level += 1;
-				GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
-			}
-			else if (www.text == "true") {
-				print ("true");
-				GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
-				level += 1;
+			if (www.text != "") {
+				if (www.text.Contains ("admin")) {
+					print ("MasterTAN eingesetzt");
+					aktuelleTan = "unmöglichzuentfernenderTANblaundnochnpaarZeichen*$%/§€‰jodassolltereichen";
+					version = www.text;
+
+				} else {
+					print ("Tan korrekt");
+					version = www.text;
+				}
+				GetComponent<Alert> ().showAlert2 ("DATEN WERDEN GELADEN");
+				downloadBackend ();
 			} else {
-				GetComponent<Alert> ().showAlert("ERROR", "Tan falsch!", "Ok");
+				GetComponent<Alert> ().showAlert("ERROR", "TAN falsch!", "Ok");
 			}
 		}
 	}
@@ -599,6 +603,24 @@ public class LoadLevel : MonoBehaviour {
 		var form = new WWWForm ();
 		form.AddField ("tan", aktuelleTan); 
 		WWW www = new WWW (deleteTANLink, form); 
+		GetComponent<Alert> ().showAlert2("VERBINDUNG WIRD HERGESTELLT");
+		yield return www;
+		GetComponent<Alert> ().disableAlert2();
+		if (www.error != null) {
+			print (www.error); 
+		} else {
+			print (www.text); //Ausgabe PHP
+		}
+	}
+
+	public void generateTAN()
+	{
+		StartCoroutine("generateTANE");
+	}
+
+	IEnumerator generateTANE()
+	{
+		WWW www = new WWW (generateTANLink); 
 		GetComponent<Alert> ().showAlert2("VERBINDUNG WIRD HERGESTELLT");
 		yield return www;
 		GetComponent<Alert> ().disableAlert2();
@@ -633,17 +655,16 @@ public class LoadLevel : MonoBehaviour {
 				if (www.text.Contains ("admin")) {
 					print ("admin hat sich eingeloggt");
 					admin = true;
-					version = www.text;
+					level += 1;
+					GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
 					GetComponent<LoginChecker> ().uploadButton.SetActive (true);
 				} else {
 					admin = false;
 					print ("normal");
-					version = www.text;
+					level += 1;
+					GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
 					GetComponent<LoginChecker> ().uploadButton.SetActive (false);
 				}
-				GetComponent<Alert> ().showAlert2("DATEN WERDEN GELADEN");
-				downloadBackend ();
-
 			} else {
 				GetComponent<Alert> ().showAlert("ERROR", "Benutzer oder Passwort falsch!", "Ok");
 			}

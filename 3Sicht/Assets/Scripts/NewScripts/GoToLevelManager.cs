@@ -11,7 +11,7 @@ public class GoToLevelManager : MonoBehaviour {
 
 	private float alpha;
 	public float alphaPlus = 0;
-	float fadeDelay = 2; //Fadedelay in Sekunden
+	float fadeDelay = 1.2f; //Fadedelay in Sekunden
 	// Update is called once per frame
 
 	void Update () {

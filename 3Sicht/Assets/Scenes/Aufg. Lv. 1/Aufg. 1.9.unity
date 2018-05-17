@@ -445,7 +445,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4545935668035154, guid: cbc0567deea134452a4d0d320f05a08f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 732
+      value: 749
       objectReference: {fileID: 0}
     - target: {fileID: 4545935668035154, guid: cbc0567deea134452a4d0d320f05a08f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -694,10 +694,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Schwimmt der rote Fisch an erster Stelle?
-
-
-'
+  m_Text: 'Sieh dir die Objekte an. Sind die Abbildungen identisch? '
 --- !u!222 &669780950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1330,7 +1327,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1906483984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 654.5, y: 491, z: 0}
+  m_LocalPosition: {x: 537.5, y: 403, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1239160181}
