@@ -187,7 +187,7 @@ public class LoadLevel : MonoBehaviour {
 
 	public string GetTimer(){
 		if (list [level].timeInSec >= 0) {
-			return "no Timer";
+			return "noTimer";
 		}
 		//else
 		return (list [level].timeInSec).ToString();
@@ -576,6 +576,7 @@ public class LoadLevel : MonoBehaviour {
 			GetComponent<Alert> ().showAlert("ERROR", "Kein Internet?", "Ok");
 		} else {
 			playerID = aktuelleTan;
+			GetComponent<Messung> ().ID = aktuelleTan;
 			print (www.text);
 			if (www.text != "") {
 				if (www.text.Contains ("admin")) {
@@ -661,6 +662,7 @@ public class LoadLevel : MonoBehaviour {
 					print ("admin hat sich eingeloggt");
 					admin = true;
 					playerID = "admin"; //da TAN bei admin-Login übersprungen wird
+					GetComponent<Messung> ().ID = "admin";
 					level += 1;
 					GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
 					GetComponent<LoginChecker> ().uploadButton.SetActive (true);
