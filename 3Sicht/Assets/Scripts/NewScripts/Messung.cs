@@ -46,18 +46,15 @@ public class Messung : MonoBehaviour {
 		s.Write(text);
 	}
 
-	public void Write(string type, string value){
+	public void WriteSimpl(string type, string String){
 		string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd_HH:mm:ss.fff", CultureInfo.InvariantCulture);
-		byte[] text = System.Text.Encoding.Unicode.GetBytes("" + ID + " " + timestamp + " " + type + " " + value + "|");
-		//byte[] text = System.Text.Encoding.Unicode.GetBytes(DateTime.Now + "|" + type + "|" + value  + Environment.NewLine);
-		//print (DateTime.Now + "|" + type + "|" + value);
-		//print("{\"PlayerID\":\"" + ID + "\",\"Date\":\"" + DateTime.Now + "\",'Eventtype\":\"" + type + "\",\"Value\":\"" + value + "\"},");
+		byte[] text = System.Text.Encoding.Unicode.GetBytes(ID + " " + timestamp + " " + type + " " + String + " - - -|");
+		s.Write(text);
+	}
 
-//		obj.PlayerID = ID;
-//		obj.Date = DateTime.Now.ToString();
-//		obj.Eventtype = type;
-//		obj.value = value;
-//		byte[] text = System.Text.Encoding.Unicode.GetBytes(JsonUtility.ToJson(obj) + ",");
+	public void WriteCompl(string type, string position, string quaternion, string countdown){
+		string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd_HH:mm:ss.fff", CultureInfo.InvariantCulture);
+		byte[] text = System.Text.Encoding.Unicode.GetBytes(ID + " " + timestamp + " " + type + " M " + position + " " + quaternion + " " + countdown + "|");
 		s.Write(text);
 	}
 

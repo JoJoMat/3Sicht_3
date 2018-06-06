@@ -28,7 +28,7 @@ public class RotateWorld : MonoBehaviour {
 				//float rotateY = Input.GetAxis("Mouse Y")*Mathf.Deg2Rad*rotateSpeed;
 				transform.RotateAround (Vector3.up, -rotateX);
 				//transform.RotateAround(Vector3.right, rotateY);
-				levelManager.GetComponent<Messung> ().Write ("UPDATE", ("[[" + GetWorldRad () + "],[" + Input.mousePosition.x.ToString () + "," + Input.mousePosition.y.ToString () + "],[" + levelManager.GetComponent<LoadLevel> ().GetTimer () + "]]"));
+				levelManager.GetComponent<Messung> ().WriteCompl ("UPDATE", Input.mousePosition.x.ToString () + "," + Input.mousePosition.y.ToString (), GetWorldRad (), levelManager.GetComponent<LoadLevel> ().GetTimer ());
 			}
 		}
 	}
@@ -40,6 +40,6 @@ public class RotateWorld : MonoBehaviour {
 
 	string GetWorldRad(){
 		print (transform.rotation.ToString ("f7"));
-		return (transform.rotation.ToString("f7").Replace(" ", ""));
+		return (transform.rotation.ToString("f7").Replace(" ", "").Replace("(","").Replace(")",""));
 	}
 }

@@ -36,7 +36,7 @@ public class GoToLevelManager : MonoBehaviour {
 	public void NextLevel()
 	{
 		GetComponent<LoadLevel> ().level += 1;
-		GetComponent<Messung> ().Write ("BUTTONCLICK", "weiter");
+		GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "weiter");
 		alphaPlus =  1f /fadeDelay;
 		taskSetEnd ();
 	}
@@ -44,17 +44,17 @@ public class GoToLevelManager : MonoBehaviour {
 	public void ifYesGoBackLevel()
 	{
 		if (GetComponent<LoadLevel> ().list [GetComponent<LoadLevel> ().level].isLastLevel) {
-			GetComponent<Messung> ().Write ("BUTTONCLICK", "beenden");
-			GetComponent<Messung> ().Write ("APPFINISHED", "");
+			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "beenden");
+			GetComponent<Messung> ().WriteSimpl ("APPFINISHED", "");
 			GetComponent<LoadLevel> ().deleteTAN();
 		}
 		bool isGoBack = GetComponent<LoadLevel> ().list[GetComponent<LoadLevel> ().level].oneLevelBack;
 		if (isGoBack) {
 			GetComponent<LoadLevel> ().level -= 1;
-			GetComponent<Messung> ().Write ("BUTTONCLICK", "nochmal");
+			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "nochmal");
 		} else {
 			GetComponent<LoadLevel> ().level += 1;
-			GetComponent<Messung> ().Write ("BUTTONCLICK", "weiter");
+			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "weiter");
 		}
 		alphaPlus =  1f /fadeDelay;
 	}
@@ -63,29 +63,29 @@ public class GoToLevelManager : MonoBehaviour {
 		bool answer = GetComponent<LoadLevel> ().list[GetComponent<LoadLevel> ().level].Answer1;
 
 		if (isYes) {
-			GetComponent<Messung> ().Write ("BUTTONCLICK", "yes");
+			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "yes");
 		} else {
-			GetComponent<Messung> ().Write ("BUTTONCLICK", "no");
+			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "no");
 		}
 
 		if (GetComponent<LoadLevel> ().list [GetComponent<LoadLevel> ().level].TypeW.ToString () == "Tutorial") {
 
 			if (isYes == answer) {
 				GetComponent<LoadLevel> ().level += 2;
-				GetComponent<Messung> ().Write ("ANSWER", "true");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "true");
 			} else {
 				GetComponent<LoadLevel> ().level += 1;
-				GetComponent<Messung> ().Write ("ANSWER", "false");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "false");
 			}
 		} else {
 			if (isYes == answer) {
 				int number = PlayerPrefs.GetInt ("numberOfRightAnswer");
 				PlayerPrefs.SetInt ("numberOfRightAnswer", (number + 1));
 				Debug.Log ("Number of Right Answer: " + PlayerPrefs.GetInt ("numberOfRightAnswer"));
-				GetComponent<Messung> ().Write ("ANSWER", "true");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "true");
 			} else {
 				Debug.Log ("Wrong answer");
-				GetComponent<Messung> ().Write ("ANSWER", "false");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "false");
 			}
 			GetComponent<LoadLevel> ().level += 1;
 		}
@@ -95,7 +95,7 @@ public class GoToLevelManager : MonoBehaviour {
 
 	public void ToggleAnswer(){
 
-		GetComponent<Messung> ().Write ("BUTTONCLICK", "weiter");
+		GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "weiter");
 
 		bool answer1 = GetComponent<LoadLevel> ().list[GetComponent<LoadLevel> ().level].Answer1;
 		bool answer2 = GetComponent<LoadLevel> ().list[GetComponent<LoadLevel> ().level].Answer2;
@@ -107,20 +107,20 @@ public class GoToLevelManager : MonoBehaviour {
 		if (GetComponent<LoadLevel> ().list [GetComponent<LoadLevel> ().level].TypeW.ToString () == "Tutorial") {
 			if (button1 == answer1 && button2 == answer2) {
 				GetComponent<LoadLevel> ().level += 2;
-				GetComponent<Messung> ().Write ("ANSWER", "true");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "true");
 			} else {
 				GetComponent<LoadLevel> ().level += 1;
-				GetComponent<Messung> ().Write ("ANSWER", "false");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "false");
 			}
 		} else {
 			if (button1 == answer1 && button2 == answer2) {
 				int number = PlayerPrefs.GetInt ("numberOfRightAnswer");
 				PlayerPrefs.SetInt ("numberOfRightAnswer", (number + 1));
 				Debug.Log ("Number of Right Answer: " + PlayerPrefs.GetInt ("numberOfRightAnswer"));
-				GetComponent<Messung> ().Write ("ANSWER", "true");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "true");
 			} else {
 				Debug.Log ("Wrong answer");
-				GetComponent<Messung> ().Write ("ANSWER", "false");
+				GetComponent<Messung> ().WriteSimpl ("ANSWER", "false");
 			}
 			GetComponent<LoadLevel> ().level += 1;
 		}
@@ -138,7 +138,7 @@ public class GoToLevelManager : MonoBehaviour {
 	void taskSetEnd(){
 		if (GetComponent<LoadLevel> ().list [GetComponent<LoadLevel> ().level-1].TypeW.ToString () == "Aufgabe" && GetComponent<LoadLevel> ().list [GetComponent<LoadLevel> ().level].TypeW.ToString () != "Aufgabe") {
 			print ("TASKSETEND");
-			GetComponent<Messung> ().Write ("TASKSETSTART", "Taskset " + GetComponent<LoadLevel> ().tasksetNr);
+			GetComponent<Messung> ().WriteSimpl ("TASKSETSTART", "Taskset " + GetComponent<LoadLevel> ().tasksetNr);
 		}
 	}
 }

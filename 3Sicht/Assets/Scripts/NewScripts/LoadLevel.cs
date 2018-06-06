@@ -54,7 +54,8 @@ public struct LevelManagerList {
 		Beispiele,
 		Video,
 		BenutzerPW,
-		Tan
+		Tan,
+		TutorialText
 	}
 	public enum GameType {
 		SideView,
@@ -123,6 +124,7 @@ public class LoadLevel : MonoBehaviour {
 	public int j; 
 	public string uploadBackendLink = "http://aodserver.mobi/3Sicht/UploadBackend.php"; 
 	public string downloadBackendLink = "http://aodserver.mobi/3Sicht/DownloadBackend.php"; 
+	public string downloadSimplBackendLink = "http://aodserver.mobi/3Sicht/DownloadSimplBackend.php"; 
 	public string uploadMeasurementLink = "http://aodserver.mobi/3Sicht/UploadMeasurement.php"; 
 	public string deleteBackendLink = "http://aodserver.mobi/3Sicht/DeleteAllRows.php"; 
 	public string uploadFilesLink = "http://www.aodserver.mobi/3Sicht/Files"; 
@@ -141,6 +143,8 @@ public class LoadLevel : MonoBehaviour {
 	bool admin = false;
 
 	Vector3 originalRad;
+
+	SimpleJSON.JSONNode sBL = JSON.Parse(""); //simpleBackLimitation;
 
 	void Start(){
 
@@ -164,7 +168,7 @@ public class LoadLevel : MonoBehaviour {
 			//zeitText.text = (Mathf.RoundToInt (list [level].timeInSec - timer)).ToString ();
 			zeitText.text = Mathf.RoundToInt(list [level].timeInSec).ToString ();
 			if (list [level].timeInSec <= 0) {
-				GetComponent<Messung> ().Write ("TIMEOUT", list [level].status.Replace(" ", ""));
+				GetComponent<Messung> ().WriteSimpl ("TIMEOUT", list [level].status.Replace(" ", ""));
 				if (list [level].TypeW.ToString () == "Tutorial") {
 					level += 2;
 				} else {
@@ -217,35 +221,96 @@ public class LoadLevel : MonoBehaviour {
 
 	void createZufallList(){
 		//addiere alle Indexe, die zufällig sein sollen zu zufallList
-		for (int i = 0; i < list.Length; i++) {
-			if (list [i].zufall) {
-				zufallList.Add(list [i]);
+
+		bool ifNewLoop = false;
+		int ifRandom = 0;
+		bool zufallOld = false;
+		int newI = 0;
+
+		while (ifNewLoop == true) {
+			for (int i = newI; i < list.Length; i++) {
+				if (list [i].zufall) {
+					zufallList.Add (list [i]);
+					if (zufallOld != list [i].zufall) {
+						ifRandom += 1;
+						zufallOld = list [i].zufall;
+						if (ifRandom >= 2){
+							ifNewLoop = true;
+							newI = i;
+							break;
+						}
+					}
+				}
 			}
-		}
-		//zufallList wird durcheinandergemischt
-		for (int i = 0; i < zufallList.Count; i++) {
-			LevelManagerList temp = zufallList[i];
-			int randomIndex = Random.Range(i, zufallList.Count);
-			zufallList[i] = zufallList[randomIndex];
-			zufallList[randomIndex] = temp;
-		}
+			//zufallList wird durcheinandergemischt
+			for (int i = 0; i < zufallList.Count; i++) {
+				LevelManagerList temp = zufallList [i];
+				int randomIndex = Random.Range (i, zufallList.Count);
+				zufallList [i] = zufallList [randomIndex];
+				zufallList [randomIndex] = temp;
+			}
 
-		//		for (int i = 0; i < zufallList.Count; i++) {
-		//			print ("zufallList: " + i + " : " + zufallList[i]);
-		//		}
-
-		//die Werte von zufallList werden zurück in die Indexe gebracht in neuer Reihenfolge
-		for (int i = 0; i < list.Length; i++) {
-			if (list [i].zufall) {
-				list [i] = zufallList [0];
-				print ("zufallList: " + i + " : " + zufallList[0] + " | " + list [i].index);
-				zufallList.RemoveAt (0);
+			//die Werte von zufallList werden zurück in die Indexe gebracht in neuer Reihenfolge
+			for (int i = 0; i < list.Length; i++) {
+				if (list [i].zufall) {
+					list [i] = zufallList [0];
+					print ("zufallList: " + i + " : " + zufallList [0] + " | " + list [i].index);
+					zufallList.RemoveAt (0);
+				}
 			}
 		}
 	}
 
+	public void checkLimitations(){
+		if (sBL["noRotate"]=="1"){ 
+			rotateIsActive = false;
+		}
+		if (sBL["timer"]=="1"){ 
+			list [level].isTime = true;
+			if (list [level].TypeW.ToString () == "Aufgabe" ||
+			    list [level].TypeW.ToString () == "Tutorial") {
+				list [level].timeInSec = 30;
+			} else if (list [level].TypeW.ToString () == "Tan" ||
+			           list [level].TypeW.ToString () == "Menu") {
+				list [level].isTime = false;
+				// Tan und Menü bekommen keinen Countdown (BenutzerPW hat sowieso keins)
+			}
+			else {
+				list [level].timeInSec = 60;
+				list [level].isInvisibleTime = true;
+			} 
+		} else {
+			list [level].isTime = false;
+		}
+		if (sBL["invisibleTimer"]=="1"){ 
+			list [level].isInvisibleTime = true;
+		} else {
+			list [level].isInvisibleTime = false;
+		}
+		if (sBL["randomLevel"]=="1"){ 
+			for (int i = 0; i < list.Length; i++) {
+				if (list [i].TypeW.ToString () == "Aufgabe") {
+					print (i);
+					list [i].zufall = true;
+				}
+			}
+			createZufallList ();
+		}
+		if (sBL["skipTutorial"]=="1"){
+			if (list [level].TypeW.ToString () == "Explanation" ||
+			    list [level].TypeW.ToString () == "Tutorial" ||
+			    list [level].TypeW.ToString () == "Video" ||
+			    list [level].TypeW.ToString () == "Beispiele" ||
+			    list [level].TypeW.ToString () == "TutorialText") {
+				list [level].skipScene = true;
+			}
+		}
+		print ("checkLimitations");
+	}
 
 	public void Starter(){
+
+		checkLimitations ();
 
 		if (list [level].skipScene) {
 			level += 1;
@@ -274,7 +339,7 @@ public class LoadLevel : MonoBehaviour {
 				loadExamples ();
 			}
 		} 
-		GetComponent<Messung> ().Write ("SCREEN", list [level].status.Replace(" ", ""));
+		GetComponent<Messung> ().WriteSimpl ("SCREEN", list [level].status.Replace(" ", ""));
 	}
 
 	//	public void InvokeUpdate(){
@@ -296,7 +361,7 @@ public class LoadLevel : MonoBehaviour {
 		if (list [level].TypeW.ToString () == "Aufgabe" && list [level - 1].TypeW.ToString () != "Aufgabe") {
 			tasksetNr += 1;
 			print ("TASKSETSTART");
-			GetComponent<Messung> ().Write ("TASKSETSTART", "Taskset " + tasksetNr);
+			GetComponent<Messung> ().WriteSimpl ("TASKSETSTART", "Taskset " + tasksetNr);
 		}
 
 
@@ -328,6 +393,9 @@ public class LoadLevel : MonoBehaviour {
 			break;
 		case "Tan":
 			j = 11;
+			break;
+		case "TutorialText":
+			j = 7;
 			break;
 		default:
 			j = 0;
@@ -454,7 +522,9 @@ public class LoadLevel : MonoBehaviour {
 
 	IEnumerator uploadDatabaseE()
 	{
-		WWW www = new WWW(deleteBackendLink); 
+		var form2 = new WWWForm(); //here you create a new form connection
+		form2.AddField( "Version", version);
+		WWW www = new WWW(deleteBackendLink,form2); 
 		GetComponent<Alert> ().showAlert2("VERBINDUNG WIRD HERGESTELLT");
 		yield return www;
 		GetComponent<Alert> ().disableAlert2();
@@ -465,6 +535,7 @@ public class LoadLevel : MonoBehaviour {
 		}
 		for (int i = 0; i < list.Length; i++) {
 			var form = new WWWForm(); //here you create a new form connection
+			form.AddField( "Version", version);
 			form.AddField( "Scene", list[i].TypeW.ToString()); //add your hash code to the field myform_hash, check that this variable name is the same as in PHP file
 			if (list [i].Prefab1.ToString () != "null") {
 				form.AddField ("MainPrefab", list [i].Prefab1.name);
@@ -688,27 +759,63 @@ public class LoadLevel : MonoBehaviour {
 	{
 		version = version.Replace ("admin", "");
 		print ("Version: " + version);
-		var form = new WWWForm ();
-		form.AddField ("Version", version);  
-		WWW www = new WWW (downloadBackendLink, form); 
-		yield return www;
-		if (www.error != null) {
+
+		var form2 = new WWWForm ();
+		form2.AddField ("Version", version);  
+		WWW www2 = new WWW (downloadSimplBackendLink, form2); 
+		yield return www2;
+		if (www2.error != null) {
 			GetComponent<Alert> ().showAlert("ERROR", "Download Backend gescheitert! - Kein Internet?", "Ok");
 		} else {
-			string jsonString = www.text; //jsonData wird zu String umgewandelt
-			//InvokeRepeating ("InetCheck", 1,10); //eine andere Funktion überprüft regelmäßig das Internet
-			print (jsonString);
-			//var N = JSON.Parse(jsonString);  //string wird geteilt in einzelne Datentypen
+			string jsonString2 = www2.text; 
+			print (jsonString2);
+			sBL = JSON.Parse(jsonString2);  //string wird geteilt in einzelne Datentypen
 
-			if (jsonString != "") {
-				level += 1;
-				GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
-				GetComponent<Alert> ().disableAlert2();
+			print (sBL.GetType ());
+			print (sBL ["noRotate"]);
+			print (sBL ["timer"]);
+			print (sBL ["invisibleTimer"]);
+			print (sBL ["randomLevel"]);
+			print (sBL ["skipTutorial"]);
+			print (sBL ["activateThisBackend"]);
+
+			if (sBL["activateThisBackend"] == "1") {
+				if (jsonString2 != "") {
+					level += 1;
+					GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
+					GetComponent<Alert> ().disableAlert2();
+				}
+			} else {
+
+				var form = new WWWForm ();
+				form.AddField ("Version", version);  
+				WWW www = new WWW (downloadBackendLink, form); 
+				yield return www;
+				if (www.error != null) {
+					GetComponent<Alert> ().showAlert("ERROR", "Download Backend gescheitert! - Kein Internet?", "Ok");
+				} else {
+					string jsonString = www.text; //jsonData wird zu String umgewandelt
+					//InvokeRepeating ("InetCheck", 1,10); //eine andere Funktion überprüft regelmäßig das Internet
+					print (jsonString);
+					if (jsonString != "") {
+						level += 1;
+						GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
+						GetComponent<Alert> ().disableAlert2();
+					}
+
+					//Daten werden ersetzt!
+
+				}
+
 			}
+
+
 
 			//Daten werden ersetzt!
 
 		}
+
+
 		//betaActive = int.Parse(N["Beta-Active"].Value);
 	}
 }

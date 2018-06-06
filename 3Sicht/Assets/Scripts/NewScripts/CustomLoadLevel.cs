@@ -88,7 +88,7 @@ public class MyScriptEditor2 : Editor
 				EditorGUI.PropertyField(new Rect(rect.x + 570, rect.y, 75, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("text"), GUIContent.none);
 				EditorGUI.PropertyField(new Rect(rect.x + 650, rect.y, 20, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("textSize"), GUIContent.none);
 
-			} else if (element.FindPropertyRelative("TypeW").enumValueIndex == 4){
+			} else if (element.FindPropertyRelative("TypeW").enumValueIndex == 4 || element.FindPropertyRelative("TypeW").enumValueIndex == 9){
 				//SIMPLE TEXT
 				EditorGUI.PropertyField(new Rect(rect.x + 100, rect.y, 75, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("text"), GUIContent.none);
 				EditorGUI.PropertyField(new Rect(rect.x + 180, rect.y, 20, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("textSize"), GUIContent.none);
