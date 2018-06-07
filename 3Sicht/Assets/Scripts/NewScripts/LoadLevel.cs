@@ -145,7 +145,7 @@ public class LoadLevel : MonoBehaviour {
 	Vector3 originalRad;
 
 	SimpleJSON.JSONNode sBL = JSON.Parse(""); //simpleBackLimitation;
-
+	bool zufallListisRandom = false;
 	void Start(){
 
 		createZufallList ();
@@ -190,7 +190,8 @@ public class LoadLevel : MonoBehaviour {
 	}
 
 	public string GetTimer(){
-		if (list [level].timeInSec >= 0) {
+		print ("GETTIMER : " + list [level].timeInSec);
+		if (list [level].timeInSec <= 0) {
 			return "noTimer";
 		}
 		//else
@@ -213,7 +214,7 @@ public class LoadLevel : MonoBehaviour {
 
 	void OnValidate () {
 		if (Application.isPlaying) {
-			Starter ();
+			//Starter ();
 		}
 	}
 
@@ -221,25 +222,33 @@ public class LoadLevel : MonoBehaviour {
 
 	void createZufallList(){
 		//addiere alle Indexe, die zufällig sein sollen zu zufallList
-
-		bool ifNewLoop = false;
+		 
+		bool ifNewLoop = true;
 		int ifRandom = 0;
 		bool zufallOld = false;
 		int newI = 0;
-
+		int startI = 0;
 		while (ifNewLoop == true) {
+			zufallList.Clear ();
+
 			for (int i = newI; i < list.Length; i++) {
+				print (i);
 				if (list [i].zufall) {
 					zufallList.Add (list [i]);
-					if (zufallOld != list [i].zufall) {
-						ifRandom += 1;
-						zufallOld = list [i].zufall;
-						if (ifRandom >= 2){
-							ifNewLoop = true;
-							newI = i;
-							break;
-						}
+				}
+				if (zufallOld != list [i].zufall) {
+					print ("ifRandomPlus - i:" + i + " zufallOld:" + zufallOld + " list [i].zufall:" + list [i].zufall);
+					ifRandom += 1;
+					zufallOld = list [i].zufall;
+					if (ifRandom >= 2){
+						print ("new List :" + i);
+						ifNewLoop = true;
+						newI = i;
+						break;
 					}
+				}
+				if (i == 55) {
+					ifNewLoop = false;
 				}
 			}
 			//zufallList wird durcheinandergemischt
@@ -251,19 +260,21 @@ public class LoadLevel : MonoBehaviour {
 			}
 
 			//die Werte von zufallList werden zurück in die Indexe gebracht in neuer Reihenfolge
-			for (int i = 0; i < list.Length; i++) {
+			for (int i = startI; i < newI; i++) {
 				if (list [i].zufall) {
+					print ("zufallList [0]: " + zufallList [0]);
 					list [i] = zufallList [0];
-					print ("zufallList: " + i + " : " + zufallList [0] + " | " + list [i].index);
+					//print ("zufallList: " + i + " : " + zufallList [0] + " | " + list [i].index);
 					zufallList.RemoveAt (0);
 				}
+				startI = newI;
 			}
 		}
 	}
 
 	public void checkLimitations(){
 		if (sBL["noRotate"]=="1"){ 
-			rotateIsActive = false;
+			list [level].noRotate = true;
 		}
 		if (sBL["timer"]=="1"){ 
 			list [level].isTime = true;
@@ -287,14 +298,16 @@ public class LoadLevel : MonoBehaviour {
 		} else {
 			list [level].isInvisibleTime = false;
 		}
-		if (sBL["randomLevel"]=="1"){ 
+		if (sBL["randomLevel"]=="1" && zufallListisRandom == false){ 
 			for (int i = 0; i < list.Length; i++) {
 				if (list [i].TypeW.ToString () == "Aufgabe") {
 					print (i);
 					list [i].zufall = true;
 				}
 			}
+			print ("update?");
 			createZufallList ();
+			zufallListisRandom = true;
 		}
 		if (sBL["skipTutorial"]=="1"){
 			if (list [level].TypeW.ToString () == "Explanation" ||
@@ -309,8 +322,13 @@ public class LoadLevel : MonoBehaviour {
 	}
 
 	public void Starter(){
+		if (sBL ["activateThisBackend"] == "1") {
+			checkLimitations ();
+		}
 
-		checkLimitations ();
+		if (list [level].isLastLevel) {
+			list [level].text = list [level].text + "Korrekte Antworten: " + PlayerPrefs.GetInt ("numberOfRightAnswer") + "/30";
+		}
 
 		if (list [level].skipScene) {
 			level += 1;
@@ -339,6 +357,7 @@ public class LoadLevel : MonoBehaviour {
 				loadExamples ();
 			}
 		} 
+		print ("SCREEN: " + list [level].status);
 		GetComponent<Messung> ().WriteSimpl ("SCREEN", list [level].status.Replace(" ", ""));
 	}
 
@@ -429,14 +448,19 @@ public class LoadLevel : MonoBehaviour {
 
 	void changeText(){
 		Text[] newText = gameTyp [j].GetComponentsInChildren<Text> ();
-		if (list [level].TypeW.ToString () != "Aufgabe") {
+		if (!(list [level].TypeW.ToString () == "Aufgabe" || 
+			  list [level].TypeW.ToString () == "Beispiele" ||
+			  list [level].TypeW.ToString () == "Video")) {
 			newText [0].text = "" + list [level].titel;
 			newText [0].fontSize = int.Parse (list [level].titelSize);
 		} else {
 			newText [0].text = "";
 		}
-		newText [1].text = "" + list [level].text;
-		newText [1].fontSize = int.Parse (list [level].textSize);
+		if (!(list [level].TypeW.ToString () == "Beispiele" ||
+		      list [level].TypeW.ToString () == "Video")) {
+			newText [1].text = "" + list [level].text;
+			newText [1].fontSize = int.Parse (list [level].textSize);
+		}
 	}
 
 	void loadModels (){
@@ -481,15 +505,15 @@ public class LoadLevel : MonoBehaviour {
 		}
 	}
 	void loadExamples (){
-		GameObject world;
-		world = gameTyp [j].transform.Find("World1").gameObject;
-		GameObject newObject;
-		newObject = Instantiate(list [level].MainPrefab);
-		newObject.name = world.name;
-		newObject.transform.position = world.transform.position;
-		newObject.transform.rotation = world.transform.rotation;
-		newObject.transform.parent = world.transform.parent;
-		Destroy(world);
+//		GameObject world;
+//		world = gameTyp [j].transform.Find("World1").gameObject;
+//		GameObject newObject;
+//		newObject = Instantiate(list [level].MainPrefab);
+//		newObject.name = world.name;
+//		newObject.transform.position = world.transform.position;
+//		newObject.transform.rotation = world.transform.rotation;
+//		newObject.transform.parent = world.transform.parent;
+//		Destroy(world);
 	}
 
 	public string encoder(GameObject prefab){
@@ -607,7 +631,7 @@ public class LoadLevel : MonoBehaviour {
 		var sr = new StreamReader (Application.persistentDataPath + "/0.json");
 		var fileContents = sr.ReadToEnd ();
 		sr.Close ();
-		//print (fileContents);
+		print (fileContents);
 
 		var form = new WWWForm ();
 		form.AddField ("Benutzer", playerID); 
