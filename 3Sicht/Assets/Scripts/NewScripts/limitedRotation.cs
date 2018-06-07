@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class limitedRotation : MonoBehaviour {
 
-	float rotateSpeed = 10;
+	float rotateSpeed = 5;
 
 	float yMinLimit = -60f;
 	float yMaxLimit = 80f;
