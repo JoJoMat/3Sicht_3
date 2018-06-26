@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System;
 using System.Globalization;
+using System.Text;
 
 [Serializable]
 public class jsonObject
@@ -28,7 +29,7 @@ public class Messung : MonoBehaviour {
 
 	void Vorbereitung(){
 		//obj = new jsonObject();
-		string savePath = Application.persistentDataPath + "/0.json";
+		string savePath = Application.persistentDataPath + "/0.txt";
 		fs = new FileStream(savePath, FileMode.Append);
 		s = new BinaryWriter (fs);
 		ID = "-";
@@ -40,38 +41,26 @@ public class Messung : MonoBehaviour {
 //		obj.Eventtype = "APPSTART";
 //		obj.value = "";
 		string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd_HH:mm:ss.fff", CultureInfo.InvariantCulture);
-		byte[] text = System.Text.Encoding.Unicode.GetBytes("" + ID + " " + timestamp + " " + "APPSTART" + " " + "-" + "|");
+		byte[] text = new UTF8Encoding (true).GetBytes("" + ID + " " + timestamp + " " + "APPSTART" + " " + "-" + "|");
 //		byte[] text = System.Text.Encoding.Unicode.GetBytes("" + Environment.NewLine + DateTime.Now + "|" + "APPSTART|" + Environment.NewLine);
 //		byte[] text = System.Text.Encoding.Unicode.GetBytes("[" + JsonUtility.ToJson(obj) + ",");
+		Debug.Log (System.Text.Encoding.UTF8.GetString(text));
 		s.Write(text);
 	}
-
 	public void WriteSimpl(string type, string String){
 		string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd_HH:mm:ss.fff", CultureInfo.InvariantCulture);
-		byte[] text = System.Text.Encoding.Unicode.GetBytes(ID + " " + timestamp + " " + type + " " + String + " - - -|");
+		byte[] text = new UTF8Encoding (true).GetBytes(ID + " " + timestamp + " " + type + " " + String + " - - -|");
+		Debug.Log (System.Text.Encoding.UTF8.GetString(text));
 		s.Write(text);
 	}
-
 	public void WriteCompl(string type, string position, string quaternion, string countdown){
 		string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd_HH:mm:ss.fff", CultureInfo.InvariantCulture);
-		byte[] text = System.Text.Encoding.Unicode.GetBytes(ID + " " + timestamp + " " + type + " M " + position + " " + quaternion + " " + countdown + "|");
+		byte[] text = new UTF8Encoding (true).GetBytes(ID + " " + timestamp + " " + type + " M " + position + " " + quaternion + " " + countdown + "|");
+		Debug.Log (System.Text.Encoding.UTF8.GetString(text));
 		s.Write(text);
 	}
-
-	void EndApp (){
-//		obj.PlayerID = ID;
-//		obj.Date = DateTime.Now.ToString();
-//		obj.Eventtype = "APPFINISHED";
-//		obj.value = "";
-		string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd_HH:mm:ss.fff", CultureInfo.InvariantCulture);
-		byte[] text = System.Text.Encoding.Unicode.GetBytes("" + ID + " " + timestamp + " " + "APPFINISHED" + " " + "-" + "|");
-		//byte[] text = System.Text.Encoding.Unicode.GetBytes("" + Environment.NewLine + DateTime.Now + "|" + "APPSTART|" + Environment.NewLine);
-		//byte[] text = System.Text.Encoding.Unicode.GetBytes(JsonUtility.ToJson(obj) + "]");
-		s.Write(text);
-	}
-
 	public void DeleteFile (){
-		string savePath = Application.persistentDataPath + "/0.json";
+		string savePath = Application.persistentDataPath + "/0.txt";
 		fs = new FileStream(savePath, FileMode.Create);
 		s = new BinaryWriter (fs);
 		s.Write("");

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class limitedRotation : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class limitedRotation : MonoBehaviour {
 
 	GameObject levelManager;
 	Vector3 originalRad;
+	GameObject currentSelection; /*= EventSystem.current.currentSelectedGameObject;*/
 
 	void Start() 
 	{
@@ -30,7 +32,7 @@ public class limitedRotation : MonoBehaviour {
 	{
 		if (levelManager.GetComponent<LoadLevel> ().rotateIsActive == true && levelManager.GetComponent<GoToLevelManager> ().alphaPlus == 0) {
 
-			if (Input.GetMouseButton (0)) {
+			if (Input.GetMouseButton (0) && EventSystem.current.currentSelectedGameObject == currentSelection) {
 				pointerX = Input.GetAxis ("Mouse X");
 				if (Input.touchCount > 0) {
 					pointerX = Input.touches [0].deltaPosition.x;
@@ -41,6 +43,10 @@ public class limitedRotation : MonoBehaviour {
 			y = ClampAngle (y, yMinLimit, yMaxLimit);
 			Quaternion newRot = Quaternion.Euler (x, y, z);
 			transform.rotation = newRot;
+
+			if (Input.GetMouseButton (0) && EventSystem.current.currentSelectedGameObject == currentSelection) { //blöd zweimal die gleiche If-Bedingung zu haben, aber so sind die Werte am zuverlässigsten
+				levelManager.GetComponent<Messung> ().WriteCompl ("UPDATE", Input.mousePosition.x.ToString () + "," + Input.mousePosition.y.ToString (), GetWorldRad (), levelManager.GetComponent<LoadLevel> ().GetTimer ());
+			}
 		}
 	}
 

@@ -181,7 +181,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 6796166b99107c45de9a868e116bf1a7 Assembly-CSharp.dll:.EventLogToggle
 2f264043a6bb59ca3369df5a4d180e17 Assembly-CSharp.dll:UnityStandardAssets.ImageEffects.CameraMotionBlur
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-4df831aa11e23b36a50815369913896a Assembly-CSharp.dll:.LoginChecker
+87ad832ee1c655dfd7ab1608029066c5 Assembly-CSharp.dll:.LoginChecker
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PanelControll
 5465eae51985f0cb194548215d2133ec Assembly-CSharp.dll:.ScrollDetailTexture
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LoadSceneOnClick

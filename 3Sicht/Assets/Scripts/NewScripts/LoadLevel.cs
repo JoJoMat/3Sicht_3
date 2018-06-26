@@ -144,6 +144,9 @@ public class LoadLevel : MonoBehaviour {
 
 	Vector3 originalRad;
 
+	bool isTimeForLog;
+	int numberOfTask;
+
 	SimpleJSON.JSONNode sBL = JSON.Parse(""); //simpleBackLimitation;
 	bool zufallListisRandom = false;
 	void Start(){
@@ -174,7 +177,7 @@ public class LoadLevel : MonoBehaviour {
 				} else {
 					level += 1;
 				}
-				Starter ();
+				GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
 			}
 
 			if (value <= 0.5) {
@@ -190,12 +193,19 @@ public class LoadLevel : MonoBehaviour {
 	}
 
 	public string GetTimer(){
-		print ("GETTIMER : " + list [level].timeInSec);
 		if (list [level].timeInSec <= 0) {
 			return "noTimer";
 		}
 		//else
 		return (list [level].timeInSec).ToString();
+	}
+
+	public string GetTimerLastLevel(){
+		if (list [level-1].timeInSec <= 0) {
+			return "noTimer";
+		}
+		//else
+		return (list [level-1].timeInSec).ToString();
 	}
 
 	public string GetMousePosition(){
@@ -232,16 +242,16 @@ public class LoadLevel : MonoBehaviour {
 			zufallList.Clear ();
 
 			for (int i = newI; i < list.Length; i++) {
-				print (i);
+				//print (i);
 				if (list [i].zufall) {
 					zufallList.Add (list [i]);
 				}
 				if (zufallOld != list [i].zufall) {
-					print ("ifRandomPlus - i:" + i + " zufallOld:" + zufallOld + " list [i].zufall:" + list [i].zufall);
+					//print ("ifRandomPlus - i:" + i + " zufallOld:" + zufallOld + " list [i].zufall:" + list [i].zufall);
 					ifRandom += 1;
 					zufallOld = list [i].zufall;
 					if (ifRandom >= 2){
-						print ("new List :" + i);
+						//print ("new List :" + i);
 						ifNewLoop = true;
 						newI = i;
 						break;
@@ -262,7 +272,6 @@ public class LoadLevel : MonoBehaviour {
 			//die Werte von zufallList werden zurück in die Indexe gebracht in neuer Reihenfolge
 			for (int i = startI; i < newI; i++) {
 				if (list [i].zufall) {
-					print ("zufallList [0]: " + zufallList [0]);
 					list [i] = zufallList [0];
 					//print ("zufallList: " + i + " : " + zufallList [0] + " | " + list [i].index);
 					zufallList.RemoveAt (0);
@@ -276,36 +285,39 @@ public class LoadLevel : MonoBehaviour {
 		if (sBL["noRotate"]=="1"){ 
 			list [level].noRotate = true;
 		}
-		if (sBL["timer"]=="1"){ 
-			list [level].isTime = true;
-			if (list [level].TypeW.ToString () == "Aufgabe" ||
-			    list [level].TypeW.ToString () == "Tutorial") {
-				list [level].timeInSec = 30;
-			} else if (list [level].TypeW.ToString () == "Tan" ||
-			           list [level].TypeW.ToString () == "Menu") {
-				list [level].isTime = false;
-				// Tan und Menü bekommen keinen Countdown (BenutzerPW hat sowieso keins)
-			}
-			else {
-				list [level].timeInSec = 60;
-				list [level].isInvisibleTime = true;
-			} 
-		} else {
-			list [level].isTime = false;
-		}
 		if (sBL["invisibleTimer"]=="1"){ 
 			list [level].isInvisibleTime = true;
 		} else {
 			list [level].isInvisibleTime = false;
 		}
+		if (sBL["timer"]=="1"){ 
+			list [level].isTime = true;
+			if (list [level].TypeW.ToString () == "Aufgabe") {
+				print ("TIMER30");
+				list [level].timeInSec = 30;
+			} else if (list [level].TypeW.ToString () == "Tan" ||
+				list [level].TypeW.ToString () == "Menu" ||
+				list [level].TypeW.ToString () == "Tutorial" ||
+				list [level].TypeW.ToString () == "Explanation" ||
+				list [level].TypeW.ToString () == "SimpleText") {
+				list [level].isTime = false;
+				// Tutorial, Tan und Menü bekommen keinen Countdown (BenutzerPW hat sowieso keins)
+			}
+			else {
+				list [level].isInvisibleTime = true;
+				list [level].isTime = true;
+				list [level].timeInSec = 120;
+			} 
+		} else {
+			list [level].isTime = false;
+		}
 		if (sBL["randomLevel"]=="1" && zufallListisRandom == false){ 
 			for (int i = 0; i < list.Length; i++) {
 				if (list [i].TypeW.ToString () == "Aufgabe") {
-					print (i);
+					//print (i);
 					list [i].zufall = true;
 				}
 			}
-			print ("update?");
 			createZufallList ();
 			zufallListisRandom = true;
 		}
@@ -318,11 +330,21 @@ public class LoadLevel : MonoBehaviour {
 				list [level].skipScene = true;
 			}
 		}
-		print ("checkLimitations");
+		//print ("checkLimitations");
 	}
 
 	public void Starter(){
-		if (sBL ["activateThisBackend"] == "1") {
+//		sBL ["activateThisBackend"] = 1;
+//		sBL ["noRotate"] = "0";
+//		sBL ["timer"] = "1";
+//		sBL ["invisibleTimer"] = "0";
+//		sBL ["randomLevel"] = "0";
+		if (isTimeForLog) {
+			GetComponent<Messung> ().WriteCompl ("TIMELEFT", "-", "-", GetTimerLastLevel ());
+			isTimeForLog = false;
+		}
+
+		if (sBL ["activateThisBackend"] == "1") { 
 			checkLimitations ();
 		}
 
@@ -344,6 +366,11 @@ public class LoadLevel : MonoBehaviour {
 
 		if (list [level].noRotate) {
 			rotateIsActive = false;
+			if (list [level].TypeW.ToString () == "Video") {
+				level += 1;
+				Starter ();
+				return;
+			}
 		} else {
 			rotateIsActive = true;
 		}
@@ -357,8 +384,21 @@ public class LoadLevel : MonoBehaviour {
 				loadExamples ();
 			}
 		} 
-		print ("SCREEN: " + list [level].status);
+		//print ("SCREEN: " + list [level].status);
 		GetComponent<Messung> ().WriteSimpl ("SCREEN", list [level].status.Replace(" ", ""));
+		if (list [level].TypeW.ToString() == "Aufgabe") {
+			numberOfTask += 1;
+			GetComponent<Messung> ().WriteSimpl ("TASKNUMBER", "" + numberOfTask);
+		}
+		if (list [level].isTime && list [level].isInvisibleTime == false) {
+			GetComponent<Messung> ().WriteCompl ("TIMEISACTIVE", "-", "-", GetTimer ());
+			isTimeForLog = true;
+		}
+		if (version == "B" && list [level].status == "Aufgabe 2.7") {
+			print ("SPEZIALCASE");
+			list [level].Answer1 = false;
+			list [level].Prefab1 = Resources.Load("Lvl2.7RB") as GameObject;
+		}
 	}
 
 	//	public void InvokeUpdate(){
@@ -628,7 +668,7 @@ public class LoadLevel : MonoBehaviour {
 	IEnumerator UploadFile()
 	{
 		print ("Daten werden hochgeladen");
-		var sr = new StreamReader (Application.persistentDataPath + "/0.json");
+		var sr = new StreamReader (Application.persistentDataPath + "/0.txt");
 		var fileContents = sr.ReadToEnd ();
 		sr.Close ();
 		print (fileContents);
@@ -675,11 +715,12 @@ public class LoadLevel : MonoBehaviour {
 			print (www.text);
 			if (www.text != "") {
 				if (www.text.Contains ("admin")) {
+					GetComponent<Messung> ().WriteSimpl ("MASTERTANLOGIN", "TAN:" + aktuelleTan);
 					print ("MasterTAN eingesetzt");
 					aktuelleTan = "unmöglichzuentfernenderTANblaundnochnpaarZeichen*$%/§€‰jodassolltereichen";
 					version = www.text;
-
 				} else {
+					GetComponent<Messung> ().WriteSimpl ("TANLOGIN", "TAN:" + aktuelleTan);
 					print ("Tan korrekt");
 					version = www.text;
 				}
@@ -693,7 +734,18 @@ public class LoadLevel : MonoBehaviour {
 
 	public void deleteTAN()
 	{
+		StartCoroutine("EndLog");
 		StartCoroutine("deleteTANE");
+	}
+
+	IEnumerator EndLog (){
+		byte[] text = System.Text.Encoding.Unicode.GetBytes("" + "noAcc" + " " + "-" + " " + "APPREALLYFINISHED" + " " + "-" + "|");
+		GetComponent<Messung> ().s.Write(text);
+		GetComponent<Alert> ().showAlert2("SAVE LOGS");
+		yield return null;
+		GetComponent<Alert> ().disableAlert2();
+		GetComponent<Messung> ().s.Close ();
+		print ("Log ist Beendet"); //Ausgabe PHP
 	}
 
 	IEnumerator deleteTANE()
@@ -751,8 +803,9 @@ public class LoadLevel : MonoBehaviour {
 		if (www.error != null) {
 			GetComponent<Alert> ().showAlert("ERROR", "Passwortcheck gescheitert! - Kein Internet?", "Ok");
 		} else {
-			print (www.text);
+			//print (www.text);
 			if (www.text != ""){
+				GetComponent<Messung> ().WriteSimpl ("BENUTZERLOGIN", "Benutzer:" + texte [0].text + "_PW:" + texte [1].text);
 				if (www.text.Contains ("admin")) {
 					print ("admin hat sich eingeloggt");
 					admin = true;
@@ -761,12 +814,14 @@ public class LoadLevel : MonoBehaviour {
 					level += 1;
 					GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
 					GetComponent<LoginChecker> ().uploadButton.SetActive (true);
+					GetComponent<LoginChecker> ().beendenButton.SetActive (true);
 				} else {
 					admin = false;
 					print ("normal");
 					level += 1;
 					GetComponent<GoToLevelManager> ().alphaPlus = 0.5f;
 					GetComponent<LoginChecker> ().uploadButton.SetActive (false);
+					GetComponent<LoginChecker> ().beendenButton.SetActive (false);
 				}
 			} else {
 				GetComponent<Alert> ().showAlert("ERROR", "Benutzer oder Passwort falsch!", "Ok");
@@ -795,13 +850,13 @@ public class LoadLevel : MonoBehaviour {
 			print (jsonString2);
 			sBL = JSON.Parse(jsonString2);  //string wird geteilt in einzelne Datentypen
 
-			print (sBL.GetType ());
-			print (sBL ["noRotate"]);
-			print (sBL ["timer"]);
-			print (sBL ["invisibleTimer"]);
-			print (sBL ["randomLevel"]);
-			print (sBL ["skipTutorial"]);
-			print (sBL ["activateThisBackend"]);
+//			print (sBL.GetType ());
+//			print (sBL ["noRotate"]);
+//			print (sBL ["timer"]);
+//			print (sBL ["invisibleTimer"]);
+//			print (sBL ["randomLevel"]);
+//			print (sBL ["skipTutorial"]);
+//			print (sBL ["activateThisBackend"]);
 
 			if (sBL["activateThisBackend"] == "1") {
 				if (jsonString2 != "") {
@@ -832,14 +887,8 @@ public class LoadLevel : MonoBehaviour {
 				}
 
 			}
-
-
-
 			//Daten werden ersetzt!
-
 		}
-
-
 		//betaActive = int.Parse(N["Beta-Active"].Value);
 	}
 }

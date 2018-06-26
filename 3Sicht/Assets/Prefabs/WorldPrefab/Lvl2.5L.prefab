@@ -34714,7 +34714,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1247588790236362}
-  m_LocalRotation: {x: 0.31376487, y: 0.63368106, z: -0.31376487, w: 0.63368106}
+  m_LocalRotation: {x: 0.31376484, y: 0.633681, z: -0.31376484, w: 0.633681}
   m_LocalPosition: {x: -0.03261727, y: -4.8849813e-17, z: -3.330669e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -37452,7 +37452,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215297010899004}
-  m_LocalRotation: {x: 0.31376487, y: 0.63368106, z: -0.31376487, w: 0.63368106}
+  m_LocalRotation: {x: 0.31376484, y: 0.633681, z: -0.31376484, w: 0.633681}
   m_LocalPosition: {x: -0.03261727, y: -4.8849813e-17, z: -3.330669e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -43534,7 +43534,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1505747771064156}
-  m_LocalRotation: {x: 0.31376484, y: 0.633681, z: -0.31376484, w: 0.633681}
+  m_LocalRotation: {x: 0.31376487, y: 0.63368106, z: -0.31376487, w: 0.63368106}
   m_LocalPosition: {x: -0.03261727, y: -3.1086245e-17, z: -3.1086245e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -50540,7 +50540,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584720664550638}
-  m_LocalRotation: {x: 0.31376487, y: 0.63368106, z: -0.31376487, w: 0.63368106}
+  m_LocalRotation: {x: 0.31376484, y: 0.633681, z: -0.31376484, w: 0.633681}
   m_LocalPosition: {x: -0.03261727, y: -3.1086245e-17, z: -3.1086245e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -52971,7 +52971,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411605427402916}
-  m_LocalRotation: {x: 0.31376484, y: 0.633681, z: -0.31376484, w: 0.633681}
+  m_LocalRotation: {x: 0.31376487, y: 0.63368106, z: -0.31376487, w: 0.63368106}
   m_LocalPosition: {x: -0.03261727, y: -4.8849813e-17, z: -3.330669e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -59868,7 +59868,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1348777770115962}
-  m_LocalRotation: {x: 0.31376487, y: 0.63368106, z: -0.31376487, w: 0.63368106}
+  m_LocalRotation: {x: 0.31376484, y: 0.633681, z: -0.31376484, w: 0.633681}
   m_LocalPosition: {x: -0.03261727, y: -3.1086245e-17, z: -3.1086245e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -62685,6 +62685,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 96c311b810d7a4ec7bd3c371165fd9ec, type: 2}
   m_StaticBatchInfo:
@@ -62719,6 +62720,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: fe3e3b8ebc1a32647b48b7ea88f534a8, type: 2}
   m_StaticBatchInfo:
@@ -62753,6 +62755,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: fe3e3b8ebc1a32647b48b7ea88f534a8, type: 2}
   m_StaticBatchInfo:
@@ -62804,9 +62807,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!95 &95355065236192842
@@ -62826,6 +62829,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95577594456068626
 Animator:
   serializedVersion: 3
@@ -62843,6 +62847,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95686008053549792
 Animator:
   serializedVersion: 3
@@ -62860,6 +62865,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114048822874368568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62939,6 +62945,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 2239700285437435891a75d9ee4831d8, type: 2}
   m_StaticBatchInfo:
@@ -63081,6 +63088,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 2239700285437435891a75d9ee4831d8, type: 2}
   m_StaticBatchInfo:
@@ -63223,6 +63231,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 2239700285437435891a75d9ee4831d8, type: 2}
   m_StaticBatchInfo:

@@ -46,15 +46,16 @@ public class GoToLevelManager : MonoBehaviour {
 		if (GetComponent<LoadLevel> ().list [GetComponent<LoadLevel> ().level].isLastLevel) {
 			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "beenden");
 			GetComponent<Messung> ().WriteSimpl ("APPFINISHED", "");
-			GetComponent<LoadLevel> ().deleteTAN();
-		}
-		bool isGoBack = GetComponent<LoadLevel> ().list[GetComponent<LoadLevel> ().level].oneLevelBack;
-		if (isGoBack) {
-			GetComponent<LoadLevel> ().level -= 1;
-			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "nochmal");
+			GetComponent<LoadLevel> ().deleteTAN ();
 		} else {
-			GetComponent<LoadLevel> ().level += 1;
-			GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "weiter");
+			bool isGoBack = GetComponent<LoadLevel> ().list [GetComponent<LoadLevel> ().level].oneLevelBack;
+			if (isGoBack) {
+				GetComponent<LoadLevel> ().level -= 1;
+				GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "nochmal");
+			} else {
+				GetComponent<LoadLevel> ().level += 1;
+				GetComponent<Messung> ().WriteSimpl ("BUTTONCLICK", "weiter");
+			}
 		}
 		alphaPlus =  1f /fadeDelay;
 	}
@@ -81,10 +82,10 @@ public class GoToLevelManager : MonoBehaviour {
 			if (isYes == answer) {
 				int number = PlayerPrefs.GetInt ("numberOfRightAnswer");
 				PlayerPrefs.SetInt ("numberOfRightAnswer", (number + 1));
-				Debug.Log ("Number of Right Answer: " + PlayerPrefs.GetInt ("numberOfRightAnswer"));
+				//Debug.Log ("Number of Right Answer: " + PlayerPrefs.GetInt ("numberOfRightAnswer"));
 				GetComponent<Messung> ().WriteSimpl ("ANSWER", "true");
 			} else {
-				Debug.Log ("Wrong answer");
+				//Debug.Log ("Wrong answer");
 				GetComponent<Messung> ().WriteSimpl ("ANSWER", "false");
 			}
 			GetComponent<LoadLevel> ().level += 1;

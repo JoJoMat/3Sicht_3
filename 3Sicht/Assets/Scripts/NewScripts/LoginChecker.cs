@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LoginChecker : MonoBehaviour {
 
 	public GameObject uploadButton;
+	public GameObject beendenButton;
 
 	public void checkTan()
 	{

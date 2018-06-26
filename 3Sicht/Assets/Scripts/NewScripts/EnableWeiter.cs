@@ -20,8 +20,7 @@ public class EnableWeiter : MonoBehaviour {
 			Toggle2Active();
 		});
 	}
-
-	// Update is called once per frame
+		
 	void Update () {
 		if (toggle[0].isOn == false && toggle[1].isOn == false) {
 			transform.localScale = new Vector3(0,0,0);
